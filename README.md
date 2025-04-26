@@ -16,7 +16,8 @@
 - Ideas locas para hacer el código más divertido.
 
 ## 🚀 Tecnologías que aprenderás
-<img src="https://skillicons.dev/icons?i=angular,docker,jenkins,html,css,js,ts,jest,sonarqube" alt="Tecnologías favoritas" width="450"/>
+<img src="https://skillicons.dev/icons?i=angular,docker,jenkins,html,css,js,ts,jest" alt="Tecnologías favoritas" width="450"/>
+**Calidad de Código:** SonarQube
 
 
 ## 🌐 Encuéntrame en otros sitios como **@espabilaTech**
