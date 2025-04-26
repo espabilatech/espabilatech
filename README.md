@@ -15,8 +15,9 @@
 - Recursos didácticos para aprender **tecnologías modernas**.
 - Ideas locas para hacer el código más divertido.
 
-## 🚀 Tecnologías favoritas
-<img src="https://skillicons.dev/icons?i=angular,docker,jenkins,html,css,js,ts,sonar" alt="Tecnologías favoritas" width="400"/>
+## 🚀 Tecnologías que aprenderás
+<img src="https://skillicons.dev/icons?i=angular,docker,jenkins,html,css,js,ts,jest,sonarqube" alt="Tecnologías favoritas" width="450"/>
+
 
 ## 🌐 Encuéntrame en otros sitios como **@espabilaTech**
 - [LinkedIn](https://www.linkedin.com/company/espabilatech)
