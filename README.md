@@ -2,7 +2,7 @@
 
 <img src="https://chdelucia.github.io/cv/assets/img/profile-img.png" alt="chdelucia" width="150" style="border-radius: 50%;" />
 
-🚀 **Programador Web especializado en Frontend** y apasionado del mundo **DevOps**.  
+🚀 **Programador Web especializado en Frontend** con más de 10 años de experiencia y apasionado del mundo **DevOps**.  
 🎓 Fundador de [EspabilaTech](https://espabilatech.hashnode.dev) — **Academia gratuita** para aprender **programación práctica** desde cero.  
 
 
