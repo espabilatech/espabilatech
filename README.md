@@ -17,6 +17,7 @@
 
 ## 🚀 Tecnologías que aprenderás
 <img src="https://skillicons.dev/icons?i=angular,docker,jenkins,html,css,js,ts,jest" alt="Tecnologías favoritas" width="450"/>
+
 **Calidad de Código:** SonarQube
 
 
