@@ -1,4 +1,4 @@
-# ¡Hola, soy chdelucia! 👋
+# ¡Bienvenid@ a espabilaTech tu academia de programacion web GRATUITA! 👋
 
 <img src="https://chdelucia.github.io/cv/assets/img/profile-img.png" alt="chdelucia" width="150" style="border-radius: 50%;" />
 
