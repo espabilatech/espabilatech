@@ -18,9 +18,6 @@
 ## 🚀 Tecnologías que aprenderás
 <img src="https://skillicons.dev/icons?i=angular,docker,jenkins,html,css,js,ts,jest" alt="Tecnologías favoritas" width="450"/>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/19/SonarQube_logo.png" alt="SonarQube" width="80" />
-
-
 
 ## 🌐 Encuéntrame en otros sitios como **@espabilaTech**
 - [LinkedIn](https://www.linkedin.com/company/espabilatech)
