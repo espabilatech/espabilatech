@@ -18,7 +18,8 @@
 ## 🚀 Tecnologías que aprenderás
 <img src="https://skillicons.dev/icons?i=angular,docker,jenkins,html,css,js,ts,jest" alt="Tecnologías favoritas" width="450"/>
 
-**Calidad de Código:** SonarQube
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/19/SonarQube_logo.png" alt="SonarQube" width="80" />
+
 
 
 ## 🌐 Encuéntrame en otros sitios como **@espabilaTech**
