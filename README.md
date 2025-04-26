@@ -1,5 +1,7 @@
 # ¡Hola, soy chdelucia! 👋
 
+<img src="https://chdelucia.github.io/cv/assets/img/profile-img.png" alt="chdelucia" width="150" style="border-radius: 50%;" />
+
 🚀 Programador Web especializado en **Frontend** y apasionado del mundo **DevOps**.  
 🎓 Fundador de [espabilaTech](https://espabilatech.hashnode.dev) — Academia para aprender **programación práctica** desde cero.  
 
