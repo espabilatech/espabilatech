@@ -7,74 +7,17 @@
   <title>Tablas</title>
   
   <link rel="stylesheet" href="lecciones.css">
+  <script src="components/header.js"></script>
+  <script src="components/sidebar.js"></script>
+  <script src="components/footer.js"></script>
 </head>
 <body>
   <!-- Skip link para accesibilidad -->
   <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
   <div class="overlay"></div>
-  <header>
-    <div class="logo-container">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M8 3H5C3.89543 3 3 3.89543 3 5V8M21 8V5C21 3.89543 20.1046 3 19 3H16M16 21H19C20.1046 21 21 20.1046 21 19V16M3 16V19C3 20.1046 3.89543 21 5 21H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M9 9L15 15M15 9L9 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span class="logo-text">espabilaTech Docs</span>
-    </div>
-    <div class="header-actions">
-  <button class="theme-toggle" aria-label="Cambiar tema">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M12 2V4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M12 20V22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M4.93 4.93L6.34 6.34" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M17.66 17.66L19.07 19.07" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M2 12H4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M20 12H22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M6.34 17.66L4.93 19.07" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M19.07 4.93L17.66 6.34" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-  <button class="mobile-menu-toggle" aria-label="Abrir menú">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-    </div>
-  </header>
+  <main-header></main-header>
   <div class="main-container">
-  <aside class="sidebar">
-      <div class="sidebar-header">
-        <h2 class="sidebar-title">Retros de Programación</h2>
-      </div>
-      <nav class="sidebar-nav">
-        <div class="nav-group">
-          <h3 class="nav-group-title">Introducción</h3>
-          <ul class="nav-items">
-            <li class="nav-item">
-              <a href="lecciones.html#introduccion" class="nav-link">¿Qué son los retros?</a>
-            </li>
-          </ul>
-        </div>
-        <div class="nav-group">
-          <h3 class="nav-group-title">Fundamentos</h3>
-          <ul class="nav-items">
-            <li class="nav-item"><a href="dia01.html" class="nav-link">¿Qué es HTML?</a></li>
-            <li class="nav-item"><a href="dia02.html" class="nav-link">Etiquetas básicas</a></li>
-            <li class="nav-item"><a href="dia03.html" class="nav-link">Enlaces y SEO</a></li>
-            <li class="nav-item"><a href="dia04.html" class="nav-link">Imágenes y multimedia</a></li>
-            <li class="nav-item"><a href="dia05.html" class="nav-link">Listas y organización</a></li>
-            <li class="nav-item"><a href="dia06.html" class="nav-link">Formularios</a></li>
-            <li class="nav-item"><a href="dia07.html" class="nav-link active">Tablas</a></li>
-            <li class="nav-item"><a href="dia08.html" class="nav-link">CSS básico</a></li>
-            <li class="nav-item"><a href="dia09.html" class="nav-link">Semántica y accesibilidad</a></li>
-            <li class="nav-item"><a href="dia10.html" class="nav-link">Proyecto final</a></li>
-            <li class="nav-item"><a href="dia11.html" class="nav-link">Git y GitHub</a></li>
-          </ul>
-        </div>
-      </nav>
-    </aside>
+  <side-bar></side-bar>
     <div class="content-wrapper">
   <main class="main-content" id="main-content">
         <h1 class="page-title">Tablas</h1>
@@ -108,23 +51,6 @@
       </main>
     </div>
   </div>
-  <footer>
-    <div class="footer-content">
-      <div class="footer-logo">
-        <span class="footer-logo-text">espabilaTech Docs</span>
-      </div>
-      <div class="footer-links">
-        <a class="footer-link" href="index.html">Inicio</a>
-        <a class="footer-link" href="lecciones.html">Lecciones</a>
-      </div>
-      <div class="footer-social">
-        <a class="social-link" href="#" aria-label="Twitter">🐦</a>
-        <a class="social-link" href="#" aria-label="GitHub">💻</a>
-      </div>
-      <div class="footer-copyright">
-        &copy; 2025 espabilaTech. Todos los derechos reservados.
-      </div>
-    </div>
-  </footer>
+  <main-footer></main-footer>
 </body>
 </html>
