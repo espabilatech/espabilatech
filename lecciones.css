@@ -312,6 +312,7 @@
       font-weight: 700;
       color: var(--color-secondary);
       margin-bottom: var(--spacing-md);
+      margin-top: var(--spacing-xl);
     }
 
     .subsection-title {
@@ -378,7 +379,6 @@
       border-radius: var(--border-radius-md);
       box-shadow: var(--shadow-sm);
       padding: var(--spacing-lg);
-      margin-top: var(--spacing-lg);
       margin-bottom: var(--spacing-lg);
       border: 1px solid #e0e0e0;
       transition: transform var(--transition-fast), box-shadow var(--transition-fast);
