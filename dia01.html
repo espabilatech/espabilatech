@@ -4,59 +4,201 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Día 1 - Introducción al mundo web - Curso de HTML desde cero">
-  <title>Día 1 - Introducción al mundo web</title>
+  <title>¿Qué es HTML?</title>
   
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="lecciones.css">
 </head>
 <body>
-  <div class="container">
+  <!-- Skip link para accesibilidad -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+  <div class="overlay" id="overlay"></div>
   <header>
-    <h1>Día 1 - Introducción al mundo web</h1>
-    <nav><a class="btn" href="index.html">Inicio</a> <a class="btn" href="dia02.html">Siguiente</a></nav>
+    <div class="logo-container">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M8 3H5C3.89543 3 3 3.89543 3 5V8M21 8V5C21 3.89543 20.1046 3 19 3H16M16 21H19C20.1046 21 21 20.1046 21 19V16M3 16V19C3 20.1046 3.89543 21 5 21H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M9 9L15 15M15 9L9 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="logo-text">espabilaTech Docs</span>
+    </div>
+    <div class="header-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" id="theme-icon">
+          <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 2V4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 20V22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4.93 4.93L6.34 6.34" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M17.66 17.66L19.07 19.07" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 12H4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 12H22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6.34 17.66L4.93 19.07" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M19.07 4.93L17.66 6.34" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
   </header>
+  <div class="main-container">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2 class="sidebar-title">Retros de Programación</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-group">
+          <h3 class="nav-group-title">Introducción</h3>
+          <ul class="nav-items">
+            <li class="nav-item">
+              <a href="lecciones.html#introduccion" class="nav-link">¿Qué son los retros?</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-group">
+          <h3 class="nav-group-title">Fundamentos</h3>
+          <ul class="nav-items">
+            <li class="nav-item"><a href="dia01.html" class="nav-link active">¿Qué es HTML?</a></li>
+            <li class="nav-item"><a href="dia02.html" class="nav-link">Etiquetas básicas</a></li>
+            <li class="nav-item"><a href="dia03.html" class="nav-link">Enlaces y SEO</a></li>
+            <li class="nav-item"><a href="dia04.html" class="nav-link">Imágenes y multimedia</a></li>
+            <li class="nav-item"><a href="dia05.html" class="nav-link">Listas y organización</a></li>
+            <li class="nav-item"><a href="dia06.html" class="nav-link">Formularios</a></li>
+            <li class="nav-item"><a href="dia07.html" class="nav-link">Tablas</a></li>
+            <li class="nav-item"><a href="dia08.html" class="nav-link">CSS básico</a></li>
+            <li class="nav-item"><a href="dia09.html" class="nav-link">Semántica y accesibilidad</a></li>
+            <li class="nav-item"><a href="dia10.html" class="nav-link">Proyecto final</a></li>
+            <li class="nav-item"><a href="dia11.html" class="nav-link">Git y GitHub</a></li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+    <div class="content-wrapper">
+      <main class="main-content" id="main-content">
+        <h1 class="page-title">¿Qué es HTML?</h1>
 
-  <main>
-    
-     <section class="card">
-       <h2>Qué aprenderás</h2>
-       <ul>
-         <li>Qué es la web y cómo funciona.</li>
-         <li>Qué son HTML, CSS y JavaScript y cómo se relacionan.</li>
-       </ul>
-       <p><strong>Objetivo:</strong> Crear tu primer archivo <code>index.html</code> y visualizarlo en el navegador.</p>
-     </section>
+        <section class="section" id="que-aprenderas">
+          <h2 class="section-title">Qué aprenderás</h2>
+          <ul>
+              <li>Qué es la web, cómo funciona Internet y el rol de los navegadores.</li>
+              <li>Qué es HTML y por qué es la base de todas las páginas web.</li>
+              <li>La diferencia entre HTML, CSS y JavaScript y cómo trabajan juntos.</li>
+              <li>Cómo crear y visualizar tu primer archivo HTML en tu ordenador.</li>
+          </ul>
 
-     <section class="card">
-       <h3>Estructura mínima de una página HTML</h3>
-       <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang="es"&gt;
-  &lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="description" content="Mi primera página web"&gt;
-    &lt;title&gt;Mi primera web&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;h1&gt;¡Hola mundo!&lt;/h1&gt;
-    &lt;p&gt;Esta es mi primera página en HTML.&lt;/p&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-     </section>
+          <p class="content-text"><strong>Objetivo:</strong> Crear tu primer archivo <code>index.html</code> y visualizarlo en el navegador.</p>
+            
+          <div class="alert alert-info">
+            <div class="alert-icon">ℹ️</div>
+            <div class="alert-content">
+              <div class="alert-title">¿Sabías qué?</div>
+              <p>HTML significa <em>HyperText Markup Language</em> (Lenguaje de Marcado de Hipertexto). Es el idioma universal de la web y permite estructurar el contenido de las páginas.</p>
+            </div>
+          </div>
+        </section>
+                <section class="section" id="diferencia-html-css-js">
+          <h2 class="section-title">Diferencia entre HTML, CSS y JavaScript</h2>
+          <div>
+            <p><strong>HTML</strong> (HyperText Markup Language) es el esqueleto de la web: define la estructura y el contenido (títulos, párrafos, imágenes, enlaces, botones...).</p>
+            <p><strong>CSS</strong> (Cascading Style Sheets) es el "maquillaje": da color, forma, tipografía, márgenes y disposición visual a los elementos HTML.</p>
+            <p><strong>JavaScript</strong> es el "cerebro": permite que la página reaccione, cambie, valide formularios, muestre mensajes, haga animaciones y mucho más.</p>
+          </div>
+ 
 
-     <section class="card">
-       <h3>Ejercicio</h3>
-       <ol>
-         <li>Crea un archivo llamado <code>index.html</code> y copia el código anterior.</li>
-         <li>Ábrelo con tu navegador (doble clic o arrastra al navegador).</li>
-         <li>Modifica el texto del &lt;h1&gt; y del &lt;p&gt;.</li>
-       </ol>
-     </section>
-     
-  </main>
+        </section>
+        <section class="section" id="estructura-minima">
+          <h2 class="section-title">Estructura mínima de una página HTML</h2>
 
-  <footer>
-    <p>Curso básico de HTML — materiales creados automáticamente.</p>
-    <p>Precio sugerido del curso: 89,99 €</p>
-  </footer>
+          <div class="code-block">
+            <div class="code-header">
+              <span class="code-language">HTML</span>
+              <button class="copy-button" data-code="&lt;button&gt;Haz clic&lt;/button&gt;">Copiar</button>
+            </div>
+                          <pre><code>&lt;!DOCTYPE html&gt;
+    &lt;html lang="es"&gt;
+      &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;meta name="description" content="Mi primera página web"&gt;
+        &lt;title&gt;Mi primera web&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;h1&gt;¡Hola mundo!&lt;/h1&gt;
+        &lt;p&gt;Esta es mi primera página en HTML.&lt;/p&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;</code></pre>
+          </div>
+
+              <ul>
+                <li><strong>&lt;!DOCTYPE html&gt;</strong>: Indica al navegador que el documento es HTML5.</li>
+                <li><strong>&lt;html lang="es"&gt;</strong>: Raíz del documento, con el idioma.</li>
+                <li><strong>&lt;head&gt;</strong>: Información para el navegador (no visible para el usuario).</li>
+                <li><strong>&lt;body&gt;</strong>: Todo lo que verá el usuario en la página.</li>
+              </ul>
+              <div class="tip-box card">
+                <strong>Consejo:</strong> Puedes abrir archivos HTML con cualquier navegador (Chrome, Firefox, Edge, etc). Solo haz doble clic en el archivo o arrástralo a la ventana del navegador.
+              </div>
+        </section>
+
+                <section id="ejercicio-1" class="section">
+          <h2 class="section-title">Ejercicio 1: Hola mundo</h2>
+          
+          <div class="exercise-card">
+            <div class="exercise-header">
+              Ejercicio práctico
+            </div>
+            <div class="exercise-content">
+              <h3 class="exercise-title">Tu primera web</h3>
+              <p class="exercise-description">
+                Crea tu primera web.
+              </p>
+              
+              <div class="exercise-steps">
+                <h4>Pasos:</h4>
+                          <ol>
+              <li class="exercise-step">Abre tu editor de texto VS Code.</li>
+              <li class="exercise-step">Crea un archivo nuevo y guárdalo como <code>index.html</code>.</li>
+              <li class="exercise-step">Copia el código de la estructura básica y pégalo en tu archivo.</li>
+              <li class="exercise-step">Guarda los cambios y abre el archivo en tu navegador.</li>
+              <li class="exercise-step">Modifica el texto del <code>&lt;h1&gt;</code> y <code>&lt;p&gt;</code> para personalizar tu página.</li>
+              <li class="exercise-step">Prueba a cambiar el título en <code>&lt;title&gt;</code> y observa cómo cambia la pestaña del navegador.</li>
+          </ol>
+              </div>
+              
+              <div class="exercise-hint">
+                <strong>Pista:</strong> Puedes usar el evento <code>click</code> para capturar cuando el usuario presiona un botón, y el método <code>eval()</code> para evaluar expresiones matemáticas (aunque en aplicaciones reales, es mejor evitar <code>eval()</code> por razones de seguridad).
+              </div>
+              
+              </div>
+            </div>
+        </section>
+
+
+        <nav class="pagination">
+          <a class="pagination-link prev" href="index.html">Inicio</a>
+          <a class="pagination-link next" href="dia02.html">Siguiente</a>
+        </nav>
+      </main>
+    </div>
   </div>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <span class="footer-logo-text">espabilaTech Docs</span>
+      </div>
+      <div class="footer-links">
+        <a class="footer-link" href="index.html">Inicio</a>
+        <a class="footer-link" href="lecciones.html">Lecciones</a>
+      </div>
+      <div class="footer-social">
+        <a class="social-link" href="#" aria-label="Twitter">🐦</a>
+        <a class="social-link" href="#" aria-label="GitHub">💻</a>
+      </div>
+      <div class="footer-copyright">
+        &copy; 2025 espabilaTech. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

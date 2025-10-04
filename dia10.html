@@ -4,57 +4,131 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Día 10 - Proyecto final: Página personal - Curso de HTML desde cero">
-  <title>Día 10 - Proyecto final: Página personal</title>
+  <title>Proyecto final</title>
   
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="lecciones.css">
 </head>
 <body>
-  <div class="container">
+  <!-- Skip link para accesibilidad -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+  <div class="overlay" id="overlay"></div>
   <header>
-    <h1>Día 10 - Proyecto final: Página personal</h1>
-    <nav><a class="btn" href="index.html">Inicio</a> <a class="btn" href="dia09.html">Anterior</a></nav>
+    <div class="logo-container">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M8 3H5C3.89543 3 3 3.89543 3 5V8M21 8V5C21 3.89543 20.1046 3 19 3H16M16 21H19C20.1046 21 21 20.1046 21 19V16M3 16V19C3 20.1046 3.89543 21 5 21H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M9 9L15 15M15 9L9 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="logo-text">espabilaTech Docs</span>
+    </div>
+    <div class="header-actions">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" id="theme-icon">
+          <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 2V4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M12 20V22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4.93 4.93L6.34 6.34" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M17.66 17.66L19.07 19.07" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 12H4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M20 12H22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6.34 17.66L4.93 19.07" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M19.07 4.93L17.66 6.34" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Abrir menú">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
   </header>
-
-  <main>
-    
-     <section class="card">
-       <h2>Qué aprenderás</h2>
-       <ul>
-         <li>Integrar todo lo aprendido en una página personal.</li>
-         <li>Organizar contenido, estilos y enlaces.</li>
-       </ul>
-     </section>
-
-     <section class="card">
-       <h3>Requisitos del proyecto</h3>
-       <ul>
-         <li>Una página principal con &lt;header&gt;, &lt;main&gt; y &lt;footer&gt;.</li>
-         <li>Incluye una imagen de perfil con <code>alt</code>, una sección "Sobre mí", una lista de habilidades y un formulario de contacto.</li>
-         <li>Aplica estilos CSS básicos.</li>
-       </ul>
-     </section>
-
-     <section class="card">
-       <h3>Ejemplo de estructura</h3>
-       <pre><code>&lt;header&gt;&lt;h1&gt;Mi web&lt;/h1&gt;&lt;/header&gt;
+  <div class="main-container">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2 class="sidebar-title">Retros de Programación</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="nav-group">
+          <h3 class="nav-group-title">Introducción</h3>
+          <ul class="nav-items">
+            <li class="nav-item">
+              <a href="lecciones.html#introduccion" class="nav-link">¿Qué son los retros?</a>
+            </li>
+          </ul>
+        </div>
+        <div class="nav-group">
+          <h3 class="nav-group-title">Fundamentos</h3>
+          <ul class="nav-items">
+            <li class="nav-item"><a href="dia01.html" class="nav-link">¿Qué es HTML?</a></li>
+            <li class="nav-item"><a href="dia02.html" class="nav-link">Etiquetas básicas</a></li>
+            <li class="nav-item"><a href="dia03.html" class="nav-link">Enlaces y SEO</a></li>
+            <li class="nav-item"><a href="dia04.html" class="nav-link">Imágenes y multimedia</a></li>
+            <li class="nav-item"><a href="dia05.html" class="nav-link">Listas y organización</a></li>
+            <li class="nav-item"><a href="dia06.html" class="nav-link">Formularios</a></li>
+            <li class="nav-item"><a href="dia07.html" class="nav-link">Tablas</a></li>
+            <li class="nav-item"><a href="dia08.html" class="nav-link">CSS básico</a></li>
+            <li class="nav-item"><a href="dia09.html" class="nav-link">Semántica y accesibilidad</a></li>
+            <li class="nav-item"><a href="dia10.html" class="nav-link active">Proyecto final</a></li>
+            <li class="nav-item"><a href="dia11.html" class="nav-link">Git y GitHub</a></li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+    <div class="content-wrapper">
+      <main class="main-content" id="main-content">
+        <h1 class="page-title">Proyecto final</h1>
+        <section class="section" id="que-aprenderas">
+          <h2 class="section-title">Qué aprenderás</h2>
+          <ul>
+            <li>Integrar todo lo aprendido en una página personal.</li>
+            <li>Organizar contenido, estilos y enlaces.</li>
+          </ul>
+        </section>
+        <section class="section" id="requisitos-proyecto">
+          <h2 class="section-title">Requisitos del proyecto</h2>
+          <ul>
+            <li>Una página principal con &lt;header&gt;, &lt;main&gt; y &lt;footer&gt;.</li>
+            <li>Incluye una imagen de perfil con <code>alt</code>, una sección "Sobre mí", una lista de habilidades y un formulario de contacto.</li>
+            <li>Aplica estilos CSS básicos.</li>
+          </ul>
+        </section>
+        <section class="section" id="ejemplo-estructura">
+          <h2 class="section-title">Ejemplo de estructura</h2>
+          <pre class="code-block"><code>&lt;header&gt;&lt;h1&gt;Mi web&lt;/h1&gt;&lt;/header&gt;
 &lt;main&gt;
   &lt;section id="sobre-mi"&gt;...&lt;/section&gt;
   &lt;section id="portfolio"&gt;...&lt;/section&gt;
 &lt;/main&gt;
 &lt;footer&gt;Contacto &amp; enlaces&lt;/footer&gt;</code></pre>
-     </section>
-
-     <section class="card">
-       <h3>Entrega</h3>
-       <p>Prepara una carpeta con todos los archivos (HTML, CSS e imágenes). Sube la carpeta comprimida o comparte un enlace si la alojas en GitHub/GitLab.</p>
-     </section>
-     
-  </main>
-
-  <footer>
-    <p>Curso básico de HTML — materiales creados automáticamente.</p>
-    <p>Precio sugerido del curso: 89,99 €</p>
-  </footer>
+        </section>
+        <section class="section" id="entrega">
+          <h2 class="section-title">Entrega</h2>
+          <p>Prepara una carpeta con todos los archivos (HTML, CSS e imágenes). Sube la carpeta comprimida o comparte un enlace si la alojas en GitHub/GitLab.</p>
+        </section>
+        <nav class="pagination">
+          <a class="pagination-link prev" href="dia09.html">Anterior</a>
+        </nav>
+      </main>
+    </div>
   </div>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <span class="footer-logo-text">espabilaTech Docs</span>
+      </div>
+      <div class="footer-links">
+        <a class="footer-link" href="index.html">Inicio</a>
+        <a class="footer-link" href="lecciones.html">Lecciones</a>
+      </div>
+      <div class="footer-social">
+        <a class="social-link" href="#" aria-label="Twitter">🐦</a>
+        <a class="social-link" href="#" aria-label="GitHub">💻</a>
+      </div>
+      <div class="footer-copyright">
+        &copy; 2025 espabilaTech. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
