@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Día 6 - Formularios y entrada de datos - Curso de HTML desde cero">
+  <title>Día 6 - Formularios y entrada de datos</title>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+  <header>
+    <h1>Día 6 - Formularios y entrada de datos</h1>
+    <nav><a class="btn" href="index.html">Inicio</a> <a class="btn" href="dia05.html">Anterior</a> <a class="btn" href="dia07.html">Siguiente</a></nav>
+  </header>
+
+  <main>
+    
+     <section class="card">
+       <h2>Qué aprenderás</h2>
+       <ul>
+         <li>Crear formularios con &lt;form&gt;, &lt;input&gt;, &lt;label&gt;, &lt;textarea&gt; y &lt;button&gt;.</li>
+         <li>Asociar etiquetas <code>&lt;label&gt;</code> para accesibilidad.</li>
+       </ul>
+     </section>
+
+     <section class="card">
+       <h3>Ejemplo</h3>
+       <pre><code>&lt;form action="#" method="get"&gt;
+  &lt;label for="name"&gt;Nombre:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name"&gt;
+
+  &lt;label for="message"&gt;Mensaje:&lt;/label&gt;
+  &lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;
+
+  &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+     </section>
+
+     <section class="card">
+       <h3>Ejercicio</h3>
+       <p>Crea un formulario de contacto con nombre, correo, asunto y mensaje. Añade validaciones básicas con los atributos <code>required</code> y <code>type="email"</code> cuando corresponda.</p>
+     </section>
+     
+  </main>
+
+  <footer>
+    <p>Curso básico de HTML — materiales creados automáticamente.</p>
+    <p>Precio sugerido del curso: 89,99 €</p>
+  </footer>
+  </div>
+</body>
+</html>
