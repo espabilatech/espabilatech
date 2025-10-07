@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Juego interactivo: Bloque vs Inline</title>
+  <link rel="stylesheet" href="assets/header.css">
+  <link rel="stylesheet" href="assets/sidebar.css">
+  <link rel="stylesheet" href="assets/footer.css">
+  <link rel="stylesheet" href="assets/lecciones.css">
+  <style>
+    .html-game-container {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .html-controls {
+      min-width: 220px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px #0001;
+    }
+    .html-controls h2 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .html-controls button {
+      display: block;
+      width: 100%;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 4px;
+      background: #e0e0e0;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    .html-controls button.active {
+      background: #003b7a;
+      color: #fff;
+    }
+    .html-preview {
+      flex: 1;
+      min-width: 250px;
+      background: #fff9f0;
+      border-radius: 8px;
+      padding: 1rem;
+      min-height: 200px;
+      box-shadow: 0 2px 8px #0001;
+    }
+    .html-preview .block {
+      display: block;
+      background: #ffcc00;
+      margin: 8px 0;
+      padding: 8px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .html-preview .inline {
+      display: inline;
+      background: #00b2ff;
+      color: #fff;
+      margin: 0 4px;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    .html-preview .container {
+      border: 2px dashed #003b7a;
+      padding: 12px;
+      border-radius: 8px;
+      min-height: 60px;
+      margin-bottom: 1rem;
+    }
+    .html-code {
+      background: #222;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-family: 'Consolas', monospace;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      min-width: 200px;
+      text-align: left;
+    }
+  </style>
+  <script src="components/header.js" defer></script>
+  <script src="components/sidebar.js" defer></script>
+  <script src="components/footer.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+  <div class="overlay"></div>
+  <main-header></main-header>
+  <div class="main-container">
+    <side-bar></side-bar>
+    <div class="content-wrapper">
+      <main class="main-content" id="main-content">
+        <h1>Juego interactivo: Bloque vs Inline</h1>
+        <p>Arrastra etiquetas al área y observa cómo se comportan. ¿Son de bloque o inline?</p>
+        <div class="html-game-container">
+          <div class="html-controls">
+            <h2>Etiquetas disponibles</h2>
+            <button data-type="block" data-tag="div">&lt;div&gt;</button>
+            <button data-type="block" data-tag="p">&lt;p&gt;</button>
+            <button data-type="block" data-tag="h2">&lt;h2&gt;</button>
+            <button data-type="block" data-tag="section">&lt;section&gt;</button>
+            <button data-type="inline" data-tag="span">&lt;span&gt;</button>
+            <button data-type="inline" data-tag="a">&lt;a&gt;</button>
+            <button data-type="inline" data-tag="strong">&lt;strong&gt;</button>
+            <button data-type="inline" data-tag="b">&lt;b&gt;</button>
+            <button data-type="inline" data-tag="i">&lt;i&gt;</button>
+            <button data-type="inline" data-tag="u">&lt;u&gt;</button>
+            <button data-type="inline" data-tag="img">&lt;img&gt;</button>
+            <button data-type="inline" data-tag="input">&lt;input&gt;</button>
+            <button data-type="block" data-tag="ul">&lt;ul&gt;</button>
+            <button data-type="block" data-tag="li">&lt;li&gt;</button>
+            <button data-type="block" data-tag="nav">&lt;nav&gt;</button>
+            <button data-type="block" data-tag="header">&lt;header&gt;</button>
+            <button data-type="block" data-tag="footer">&lt;footer&gt;</button>
+            <button data-type="block" data-tag="main">&lt;main&gt;</button>
+            <button data-type="block" data-tag="article">&lt;article&gt;</button>
+            <button data-type="inline" data-tag="label">&lt;label&gt;</button>
+            <button data-type="inline" data-tag="em">&lt;em&gt;</button>
+            <button data-type="inline" data-tag="small">&lt;small&gt;</button>
+            <button data-type="inline" data-tag="abbr" style="display:none"></button>
+            <button data-type="inline" data-tag="code" style="display:none"></button>
+            <button data-type="reset">Reiniciar</button>
+          </div>
+          <div class="html-preview">
+            <div class="container" id="htmlContainer"></div>
+            <div class="html-code" id="htmlCode" style="display:none"></div>
+          </div>
+        </div>
+        <p><b>Tip:</b> Si pones una etiqueta inline dentro de un bloque, se verá en línea. Si pones varias de bloque, cada una ocupa toda la línea. ¡Experimenta!</p>
+      </main>
+    </div>
+  </div>
+  <main-footer></main-footer>
+  <script>
+    const htmlContainer = document.getElementById('htmlContainer');
+    const htmlCode = document.getElementById('htmlCode');
+    const htmlButtons = document.querySelectorAll('.html-controls button');
+    let htmlElements = [];
+    function renderHtml() {
+      htmlContainer.innerHTML = '';
+      htmlElements.forEach(el => {
+        const node = document.createElement('span');
+        node.className = el.type;
+        node.textContent = `<${el.tag}>${el.type === 'block' ? 'Bloque' : 'Inline'}</${el.tag}>`;
+        htmlContainer.appendChild(node);
+      });
+      if (htmlElements.length === 0) {
+        htmlCode.textContent = '/* Haz clic en las etiquetas para agregarlas */';
+      } else {
+        htmlCode.textContent = htmlElements.map(el => `<${el.tag}>${el.type === 'block' ? 'Bloque' : 'Inline'}</${el.tag}>`).join('\n');
+      }
+    }
+    htmlButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (btn.dataset.type === 'reset') {
+          htmlElements = [];
+          htmlButtons.forEach(b => b.classList.remove('active'));
+          renderHtml();
+          return;
+        }
+        htmlElements.push({ tag: btn.dataset.tag, type: btn.dataset.type });
+        btn.classList.add('active');
+        renderHtml();
+      });
+    });
+    renderHtml();
+  </script>
+</body>
+</html>

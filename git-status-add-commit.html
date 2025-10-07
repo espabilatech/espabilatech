@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Git: status, add y commit</title>
+  <link rel="stylesheet" href="assets/header.css">
+  <link rel="stylesheet" href="assets/sidebar.css">
+  <link rel="stylesheet" href="assets/footer.css">
+  <link rel="stylesheet" href="assets/lecciones.css">
+  <script src="components/header.js" defer></script>
+  <script src="components/sidebar.js" defer></script>
+  <script src="components/footer.js" defer></script>
+  <script src="components/code-block.js" defer></script>
+</head>
+<body>
+  <main-header></main-header>
+  <div class="main-container">
+    <side-bar></side-bar>
+    <div class="content-wrapper">
+      <main class="main-content" id="main-content">
+        <h1 class="page-title">Git: status, add y commit</h1>
+        <section class="section">
+          <h2 class="section-title">Ver estado y guardar cambios</h2>
+          <p><b>git status</b> muestra los archivos modificados y su estado.</p>
+          <code-block language="bash" title="Ver estado" code="git status" no-result></code-block>
+          <p><b>git add</b> añade archivos al área de preparación (staging).</p>
+          <code-block language="bash" title="Añadir archivo" code="git add archivo.txt" no-result></code-block>
+          <p><b>git commit</b> guarda los cambios en el historial del repositorio.</p>
+          <code-block language="bash" title="Guardar cambios" code="git commit -m 'Mensaje del commit'" no-result></code-block>
+        </section>
+      </main>
+    </div>
+  </div>
+  <main-footer></main-footer>
+</body>
+</html>

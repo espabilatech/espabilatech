@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DOM, CSSOM y Renderizado</title>
+  <link rel="stylesheet" href="assets/header.css">
+  <link rel="stylesheet" href="assets/sidebar.css">
+  <link rel="stylesheet" href="assets/footer.css">
+  <link rel="stylesheet" href="assets/lecciones.css">
+  <script src="components/header.js" defer></script>
+  <script src="components/sidebar.js" defer></script>
+  <script src="components/footer.js" defer></script>
+  <script src="components/code-block.js" defer></script>
+</head>
+<body>
+  <main-header></main-header>
+  <div class="main-container">
+    <side-bar></side-bar>
+    <div class="content-wrapper">
+      <main class="main-content" id="main-content">
+        <h1 class="page-title">DOM, CSSOM y Renderizado</h1>
+        <section class="section">
+          <h2 class="section-title">¿Cómo funciona el navegador?</h2>
+          <p>El navegador convierte el HTML en el <b>DOM</b> y el CSS en el <b>CSSOM</b>. Ambos se combinan para crear el <b>árbol de renderizado</b>, que determina qué se muestra en pantalla.</p>
+        </section>
+        <section class="section">
+          <h2 class="section-title">Fases del renderizado</h2>
+          <ol>
+            <li><b>Parseo HTML → DOM</b></li>
+            <li><b>Parseo CSS → CSSOM</b></li>
+            <li><b>Render Tree</b>: combinación DOM + CSSOM</li>
+            <li><b>Layout (Reflow)</b>: cálculo de posiciones y tamaños</li>
+            <li><b>Paint</b>: dibujo de píxeles</li>
+            <li><b>Composite</b>: composición de capas</li>
+          </ol>
+        </section>
+        <section class="section">
+          <h2 class="section-title">Referencias útiles</h2>
+          <ul>
+            <li><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path" target="_blank">Critical Rendering Path (Google)</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work" target="_blank">How browsers work (MDN)</a></li>
+            <li><a href="https://web.dev/critical-rendering-path/" target="_blank">web.dev: Critical Rendering Path</a></li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </div>
+  <main-footer></main-footer>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Día 12 - CSS avanzado: selectores y especificidad - Curso de HTML desde cero">
+  <title>CSS avanzado: selectores y especificidad</title>
+  <link rel="stylesheet" href="assets/header.css">
+  <link rel="stylesheet" href="assets/sidebar.css">
+  <link rel="stylesheet" href="assets/footer.css">
+  <link rel="stylesheet" href="assets/lecciones.css">
+  <script src="components/header.js" defer></script>
+  <script src="components/sidebar.js" defer></script>
+  <script src="components/footer.js" defer></script>
+  <script src="components/code-block.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+  <div class="overlay"></div>
+  <main-header></main-header>
+  <div class="main-container">
+    <side-bar></side-bar>
+    <div class="content-wrapper">
+      <main class="main-content" id="main-content">
+        <h1 class="page-title">CSS Avanzado: Selectores y Especificidad</h1>
+        <section class="section">
+          <h2 class="section-title">¿Qué son los selectores?</h2>
+          <p>Los selectores en CSS sirven para elegir a qué elementos HTML quieres aplicar estilos. Algunos ejemplos sencillos:</p>
+          <ul>
+            <li><b>Selector de etiqueta:</b> <code>p</code> (selecciona todos los párrafos)</li>
+            <li><b>Selector de clase:</b> <code>.importante</code> (selecciona los elementos con <code>class="importante"</code>)</li>
+            <li><b>Selector de id:</b> <code>#menu</code> (selecciona el elemento con <code>id="menu"</code>)</li>
+          </ul>
+        </section>
+        <section class="section">
+          <h2 class="section-title">¿Qué es la especificidad?</h2>
+          <p>Si dos reglas CSS apuntan al mismo elemento, la más "específica" gana. Por ejemplo, observa el siguiente código:</p>
+          <code-block title="Ejemplo de especificidad" language="html+css" code="<!-- HTML -->
+&lt;p class='importante'&gt;Hola&lt;/p&gt;
+<style>
+p { color: blue; }
+.importante { color: red; }
+</style>"></code-block>
+          <p>El texto será <b>rojo</b> porque la clase es más específica que la etiqueta.</p>
+        </section>
+        <section class="section">
+          <h2 class="section-title">Resumen fácil</h2>
+          <ul>
+            <li>Etiqueta &lt; <b>Clase</b> &lt; <b>ID</b></li>
+            <li>Si hay empate, gana la regla que esté más abajo en el CSS.</li>
+          </ul>
+        </section>
+        <section class="section">
+          <h2 class="section-title">Ejemplo práctico</h2>
+          <p>En este ejemplo, el mismo elemento tiene etiqueta, clase e id. ¿Qué color gana?</p>
+          <code-block title="Ejemplo práctico" language="html+css" code="<!-- HTML -->
+&lt;p id='aviso' class='importante'&gt;¡Atención!&lt;/p&gt;
+<style>
+p { color: blue; }
+.importante { color: red; }
+#aviso { color: green; }
+</style>"></code-block>
+          <p>El texto será <b>verde</b> porque el id es lo más específico.</p>
+        </section>
+        <section class="section">
+          <h2 class="section-title">¡Ponlo en práctica!</h2>
+          <p>Prueba a copiar este HTML y CSS en tu editor y cambia los colores para ver cómo funciona la especificidad:</p>
+          <code-block title="Prueba en práctica" language="html+css" code="<!-- HTML -->
+&lt;p id='mensaje' class='importante'&gt;¡Hola CSS!&lt;/p&gt;
+<style>
+p { color: orange; }
+.importante { color: purple; }
+#mensaje { color: teal; }
+</style>"></code-block>
+          <p>¿De qué color se verá el texto? <b>Teal</b> (porque el id es lo más específico).</p>
+        </section>
+        <section class="section">
+          <h2 class="section-title">Prueba en vivo</h2>
+          <p>Puedes ver y modificar este ejemplo en vivo en CodePen:</p>
+          <div class="codepen-embed">
+            <iframe height="350" style="width: 100%;" scrolling="no" title="Especificidad CSS básica" src="https://codepen.io/team/codepen/embed/preview/PoqQwQy?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"></iframe>
+          </div>
+          <p>Haz clic en <b>"Edit on CodePen"</b> para experimentar con los selectores y colores.</p>
+        </section>
+        <nav class="pagination">
+          <a class="pagination-link prev" href="css-basico-html.html">Anterior</a>
+        </nav>
+      </main>
+    </div>
+  </div>
+  <main-footer></main-footer>
+</body>
+</html>

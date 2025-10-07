@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ejercicio: Layers y animaciones</title>
+  <link rel="stylesheet" href="assets/header.css">
+  <link rel="stylesheet" href="assets/sidebar.css">
+  <link rel="stylesheet" href="assets/footer.css">
+  <link rel="stylesheet" href="assets/lecciones.css">
+  <style>
+    .demo-flex { display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .demo-box { width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; color: #fff; cursor: pointer; font-weight: bold; }
+    .demo-left { background: #ff4425; position: relative; left: 0; transition: left 1s; }
+    .demo-transform { background: #00b2ff; position: relative; transform: translateX(0); transition: transform 1s; }
+  </style>
+  <script src="components/header.js" defer></script>
+  <script src="components/sidebar.js" defer></script>
+  <script src="components/footer.js" defer></script>
+  <script src="components/code-block.js" defer></script>
+</head>
+<body>
+  <main-header></main-header>
+  <div class="main-container">
+    <side-bar></side-bar>
+    <div class="content-wrapper">
+      <main class="main-content" id="main-content">
+        <h1 class="page-title">Ejercicio: Layers y animaciones</h1>
+        <section class="section">
+          <h2 class="section-title">Crea una animación eficiente</h2>
+          <p>Compara el rendimiento de animar <code>left</code> vs <code>transform: translateX</code>:</p>
+          <div class="demo-flex">
+            <div>
+              <div class="demo-box demo-left" id="anim-left">Haz click</div>
+              <div style="text-align:center; margin-top:0.5rem; font-size:0.95em;">Animación con <b>left</b></div>
+            </div>
+            <div>
+              <div class="demo-box demo-transform" id="anim-transform">Haz click</div>
+              <div style="text-align:center; margin-top:0.5rem; font-size:0.95em;">Animación con <b>transform</b></div>
+            </div>
+          </div>
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              const leftBox = document.getElementById('anim-left');
+              const transBox = document.getElementById('anim-transform');
+              if(leftBox) {
+                leftBox.onclick = function() {
+                  this.style.left = this.style.left === '200px' ? '0' : '200px';
+                };
+              }
+              if(transBox) {
+                transBox.onclick = function() {
+                  this.style.transform = this.style.transform === 'translateX(200px)' ? 'translateX(0)' : 'translateX(200px)';
+                };
+              }
+            });
+          </script>
+          <code-block language="html+css" title="Animación con left (menos eficiente)"
+            code="&lt;style&gt;
+.caja {
+  position: relative;
+  left: 0;
+  transition: left 1s;
+  width: 100px;
+  height: 100px;
+  background: #ff4425;
+}
+&lt;/style&gt;
+
+&lt;div class='caja' onclick=&quot;this.style.left='200px'&quot;&gt;Haz click&lt;/div&gt;"
+          ></code-block>
+          <code-block language="html+css" title="Animación con transform (más eficiente)"
+            code="&lt;style&gt;
+.caja2 {
+  position: relative;
+  transform: translateX(0);
+  transition: transform 1s;
+  width: 100px;
+  height: 100px;
+  background: #00b2ff;
+}
+&lt;/style&gt;
+
+&lt;div class='caja2' onclick=&quot;this.style.transform='translateX(200px)'&quot;&gt;Haz click&lt;/div&gt;"
+          ></code-block>
+        </section>
+        <section class="section">
+          <h2 class="section-title">Referencias</h2>
+          <ul>
+            <li><a href="https://web.dev/animations-guide/" target="_blank">web.dev: Animations guide</a></li>
+            <li><a href="https://developer.chrome.com/docs/devtools/layers/" target="_blank">Chrome DevTools: Layers</a></li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </div>
+  <main-footer></main-footer>
+</body>
+</html>
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ejercicio: Layers y animaciones</title>
+  <link rel="stylesheet" href="assets/header.css">
+  <link rel="stylesheet" href="assets/sidebar.css">
+  <link rel="stylesheet" href="assets/footer.css">
+  <link rel="stylesheet" href="assets/lecciones.css">
+  <style>
+    .demo-flex { display: flex; gap: 2rem; flex-wrap: wrap; margin-bottom: 2rem; }
+    .demo-box { width: 100px; height: 100px; display: flex; align-items: center; justify-content: center; color: #fff; cursor: pointer; font-weight: bold; }
+    .demo-left { background: #ff4425; position: relative; left: 0; transition: left 1s; }
+    .demo-transform { background: #00b2ff; position: relative; transform: translateX(0); transition: transform 1s; }
+  </style>
+  <script src="components/header.js" defer></script>
+  <script src="components/sidebar.js" defer></script>
+  <script src="components/footer.js" defer></script>
+  <script src="components/code-block.js" defer></script>
+</head>
+<body>
+  <main-header></main-header>
+  <div class="main-container">
+    <side-bar></side-bar>
+    <div class="content-wrapper">
+      <main class="main-content" id="main-content">
+        <h1 class="page-title">Ejercicio: Layers y animaciones</h1>
+        <section class="section">
+          <h2 class="section-title">Crea una animación eficiente</h2>
+          <p>Compara el rendimiento de animar <code>left</code> vs <code>transform: translateX</code>:</p>
+          <div class="demo-flex">
+            <div>
+              <div class="demo-box demo-left" id="anim-left">Haz click</div>
+              <div style="text-align:center; margin-top:0.5rem; font-size:0.95em;">Animación con <b>left</b></div>
+            </div>
+            <div>
+              <div class="demo-box demo-transform" id="anim-transform">Haz click</div>
+              <div style="text-align:center; margin-top:0.5rem; font-size:0.95em;">Animación con <b>transform</b></div>
+            </div>
+          </div>
+          <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              const leftBox = document.getElementById('anim-left');
+              const transBox = document.getElementById('anim-transform');
+              if(leftBox) {
+                leftBox.onclick = function() {
+                  this.style.left = this.style.left === '200px' ? '0' : '200px';
+                  this.style.transform = this.style.transform === 'translateX(200px)' ? 'translateX(0)' : 'translateX(200px)';
+                };
+              }
+          <code-block language="html+css" title="Animación con left (menos eficiente)"
+            code="&lt;style&gt;
+  &lt;/style&gt;
+  &lt;div class='caja' onclick=&quot;this.style.left='200px'&quot;&gt;Haz click&lt;/div&gt;"
+            ></code-block>
+    .caja2 { position: relative; transform: translateX(0); transition: transform 1s; width: 100px; height: 100px; background: #00b2ff; }
+    &lt;/style&gt;
+    &lt;div class='caja2' onclick=&quot;this.style.transform='translateX(200px)'&quot;&gt;Haz click&lt;/div&gt;"
+              </code-block>
+              <code-block language="html+css" title="Animación con left (menos eficiente)"
+                code="&lt;style&gt;
+    .caja {
+      position: relative;
+      left: 0;
+      transition: left 1s;
+      width: 100px;
+      height: 100px;
+      background: #ff4425;
+    }
+    &lt;/style&gt;
+
+    &lt;div class='caja' onclick=&quot;this.style.left='200px'&quot;&gt;Haz click&lt;/div&gt;"
+              ></code-block>
+              <code-block language="html+css" title="Animación con transform (más eficiente)"
+                code="&lt;style&gt;
+    .caja2 {
+      position: relative;
+      transform: translateX(0);
+      transition: transform 1s;
+      width: 100px;
+      height: 100px;
+      background: #00b2ff;
+    }
+    &lt;/style&gt;
+
+    &lt;div class='caja2' onclick=&quot;this.style.transform='translateX(200px)'&quot;&gt;Haz click&lt;/div&gt;"
+              ></code-block>
+        </section>
+        <section class="section">
+          ></code-block>
+          <code-block language="html+css" title="Animación con transform (más eficiente)"
+            code="&lt;style&gt;
+          <h2 class="section-title">Referencias</h2>
+          <ul>
+            <li><a href="https://web.dev/animations-guide/" target="_blank">web.dev: Animations guide</a></li>
+            <li><a href="https://developer.chrome.com/docs/devtools/layers/" target="_blank">Chrome DevTools: Layers</a></li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </div>
+  <main-footer></main-footer>
+</body>
+          ></code-block>
+</html>

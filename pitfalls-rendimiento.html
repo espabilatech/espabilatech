@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Errores comunes de rendimiento</title>
+  <link rel="stylesheet" href="assets/header.css">
+  <link rel="stylesheet" href="assets/sidebar.css">
+  <link rel="stylesheet" href="assets/footer.css">
+  <link rel="stylesheet" href="assets/lecciones.css">
+  <script src="components/header.js" defer></script>
+  <script src="components/sidebar.js" defer></script>
+  <script src="components/footer.js" defer></script>
+  <script src="components/code-block.js" defer></script>
+</head>
+<body>
+  <main-header></main-header>
+  <div class="main-container">
+    <side-bar></side-bar>
+    <div class="content-wrapper">
+      <main class="main-content" id="main-content">
+        <h1 class="page-title">Errores comunes de rendimiento</h1>
+        <section class="section">
+          <h2 class="section-title">Pitfalls frecuentes</h2>
+          <ul>
+            <li>Manipular el DOM en bucles o con demasiada frecuencia.</li>
+            <li>Forzar reflows leyendo y escribiendo layout en la misma función.</li>
+            <li>Usar imágenes sin optimizar.</li>
+            <li>Demasiados listeners globales.</li>
+            <li>CSS y JS no minificados o cargados de forma bloqueante.</li>
+            <li>Animaciones que no usan <code>transform</code> o <code>opacity</code>.</li>
+            <li>Demasiadas layers innecesarias.</li>
+            <li>Uso excesivo de frameworks pesados.</li>
+          </ul>
+        </section>
+        <section class="section">
+          <h2 class="section-title">Referencias útiles</h2>
+          <ul>
+            <li><a href="https://web.dev/optimize-performance/" target="_blank">Optimizing Performance (web.dev)</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Performance" target="_blank">MDN: Web Performance</a></li>
+            <li><a href="https://css-tricks.com/common-performance-mistakes/" target="_blank">CSS Tricks: Common Performance Mistakes</a></li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </div>
+  <main-footer></main-footer>
+</body>
+</html>

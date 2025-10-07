@@ -6,7 +6,11 @@
   <meta name="description" content="Día 6 - Formularios y entrada de datos - Curso de HTML desde cero">
   <title>Formularios</title>
   
-  <link rel="stylesheet" href="lecciones.css">
+  <link rel="stylesheet" href="assets/header.css">
+  <link rel="stylesheet" href="assets/sidebar.css">
+  <link rel="stylesheet" href="assets/footer.css">
+  <link rel="stylesheet" href="assets/lecciones.css">
+  <script src="components/code-block.js" defer></script>
   <script src="components/header.js" defer></script>
   <script src="components/sidebar.js" defer></script>
   <script src="components/footer.js" defer></script>
@@ -30,7 +34,6 @@
         </section>
   <section class="section">
           <h2 class="section-title">Ejemplo</h2>
-          <pre class="code-block"><code>&lt;form action="#" method="get"&gt;
   &lt;label for="name"&gt;Nombre:&lt;/label&gt;
   &lt;input type="text" id="name" name="name"&gt;
 
@@ -39,14 +42,15 @@
 
   &lt;button type="submit"&gt;Enviar&lt;/button&gt;
 &lt;/form&gt;</code></pre>
+          <code-block title="HTML" language="HTML" code="&lt;form action='#' method='get'&gt;&#10;  &lt;label for='name'&gt;Nombre:&lt;/label&gt;&#10;  &lt;input type='text' id='name' name='name'&gt;&#10;&#10;  &lt;label for='message'&gt;Mensaje:&lt;/label&gt;&#10;  &lt;textarea id='message' name='message'&gt;&lt;/textarea&gt;&#10;&#10;  &lt;button type='submit'&gt;Enviar&lt;/button&gt;&#10;&lt;/form&gt;"></code-block>
         </section>
   <section class="section">
           <h2 class="section-title">Ejercicio</h2>
           <p>Crea un formulario de contacto con nombre, correo, asunto y mensaje. Añade validaciones básicas con los atributos <code>required</code> y <code>type="email"</code> cuando corresponda.</p>
         </section>
         <nav class="pagination">
-          <a class="pagination-link prev" href="dia05.html">Anterior</a>
-          <a class="pagination-link next" href="dia07.html">Siguiente</a>
+          <a class="pagination-link prev" href="listas-organizacion-html.html">Anterior</a>
+          <a class="pagination-link next" href="tablas-html.html">Siguiente</a>
         </nav>
       </main>
     </div>

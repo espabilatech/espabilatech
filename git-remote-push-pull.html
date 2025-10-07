@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Git: remote, push y pull</title>
+  <link rel="stylesheet" href="assets/header.css">
+  <link rel="stylesheet" href="assets/sidebar.css">
+  <link rel="stylesheet" href="assets/footer.css">
+  <link rel="stylesheet" href="assets/lecciones.css">
+  <script src="components/header.js" defer></script>
+  <script src="components/sidebar.js" defer></script>
+  <script src="components/footer.js" defer></script>
+  <script src="components/code-block.js" defer></script>
+</head>
+<body>
+  <main-header></main-header>
+  <div class="main-container">
+    <side-bar></side-bar>
+    <div class="content-wrapper">
+      <main class="main-content" id="main-content">
+        <h1 class="page-title">Git: remote, push y pull</h1>
+        <section class="section">
+          <h2 class="section-title">Sincronizar con remoto</h2>
+          <p><b>git remote add origin</b> conecta tu repo local con uno remoto.</p>
+          <code-block language="bash" title="Conectar remoto" code="git remote add origin https://github.com/usuario/repositorio.git" no-result></code-block>
+          <p><b>git push</b> sube tus commits al repositorio remoto.</p>
+          <code-block language="bash" title="Subir cambios" code="git push origin main" no-result></code-block>
+          <p><b>git pull</b> descarga y fusiona los cambios del remoto.</p>
+          <code-block language="bash" title="Bajar cambios" code="git pull origin main" no-result></code-block>
+        </section>
+      </main>
+    </div>
+  </div>
+  <main-footer></main-footer>
+</body>
+</html>

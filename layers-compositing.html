@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Layers y Compositing</title>
+  <link rel="stylesheet" href="assets/header.css">
+  <link rel="stylesheet" href="assets/sidebar.css">
+  <link rel="stylesheet" href="assets/footer.css">
+  <link rel="stylesheet" href="assets/lecciones.css">
+  <script src="components/header.js" defer></script>
+  <script src="components/sidebar.js" defer></script>
+  <script src="components/footer.js" defer></script>
+  <script src="components/code-block.js" defer></script>
+</head>
+<body>
+  <main-header></main-header>
+  <div class="main-container">
+    <side-bar></side-bar>
+    <div class="content-wrapper">
+      <main class="main-content" id="main-content">
+        <h1 class="page-title">Layers y Compositing</h1>
+        <section class="section">
+          <h2 class="section-title">¿Qué son las layers?</h2>
+          <p>El navegador puede crear <b>capas (layers)</b> para aislar partes de la página y optimizar el renderizado, especialmente con <code>position: fixed</code>, <code>transform</code>, <code>will-change</code> o animaciones.</p>
+        </section>
+        <section class="section">
+          <h2 class="section-title">¿Cuándo se crean layers?</h2>
+          <ul>
+            <li>Elementos con <code>position: fixed</code> o <code>sticky</code></li>
+            <li>Elementos con <code>transform</code> distinto de <code>none</code></li>
+            <li>Elementos con <code>will-change</code></li>
+            <li>Elementos con <code>filter</code>, <code>opacity</code>, <code>canvas</code>, <code>video</code>, etc.</li>
+          </ul>
+        </section>
+        <section class="section">
+          <h2 class="section-title">Impacto en el rendimiento</h2>
+          <ul>
+            <li>Las layers pueden mejorar animaciones y aislar repaints.</li>
+            <li>Demasiadas layers consumen memoria y pueden ralentizar el renderizado.</li>
+          </ul>
+        </section>
+        <section class="section">
+          <h2 class="section-title">Referencias útiles</h2>
+          <ul>
+            <li><a href="https://developers.google.com/web/updates/2018/09/inside-browser-part3" target="_blank">Inside look at modern web browsers (Google)</a></li>
+            <li><a href="https://developer.chrome.com/docs/devtools/layers/" target="_blank">Chrome DevTools: Layers panel</a></li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </div>
+  <main-footer></main-footer>
+</body>
+</html>

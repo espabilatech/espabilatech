@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Juego interactivo: Propiedades CSS</title>
+  <link rel="stylesheet" href="assets/header.css">
+  <link rel="stylesheet" href="assets/sidebar.css">
+  <link rel="stylesheet" href="assets/footer.css">
+  <link rel="stylesheet" href="assets/lecciones.css">
+  <style>
+    .css-game-container {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .css-controls {
+      min-width: 220px;
+      background: #f5f5f5;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px #0001;
+    }
+    .css-controls h2 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+    .css-controls button {
+      display: block;
+      width: 100%;
+      margin-bottom: 0.5rem;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 4px;
+      background: #e0e0e0;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    .css-controls button.active {
+      background: #ff4425;
+      color: #fff;
+    }
+    .css-preview {
+      flex: 1;
+      min-width: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .css-target {
+      width: 200px;
+      height: 120px;
+      background: #fff9f0;
+      border: 2px solid #003b7a;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+    }
+    .css-code {
+      background: #222;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-family: 'Consolas', monospace;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      min-width: 200px;
+      text-align: left;
+    }
+    .css-console {
+      background: #000;
+      color: #0f0;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-family: 'Consolas', monospace;
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      min-width: 200px;
+      text-align: left;
+      height: 100px;
+      overflow-y: auto;
+    }
+    .priority-section {
+      margin-top: 3rem;
+      padding: 1rem;
+      background: #f0f0f0;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px #0001;
+    }
+    .priority-section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    .priority-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .priority-controls button {
+      background: #e0e0e0;
+      border: none;
+      border-radius: 4px;
+      padding: 0.5rem;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    .priority-controls button:hover {
+      background: #d0d0d0;
+    }
+  </style>
+  <script src="components/header.js" defer></script>
+  <script src="components/sidebar.js" defer></script>
+  <script src="components/footer.js" defer></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+  <div class="overlay"></div>
+  <main-header></main-header>
+  <div class="main-container">
+    <side-bar></side-bar>
+    <div class="content-wrapper">
+      <main class="main-content" id="main-content">
+        <h1>Juego interactivo: Propiedades CSS</h1>
+        <p>Haz clic en las propiedades CSS para ver cómo cambian el cuadro. ¡Aprende jugando!</p>
+        <div class="css-game-container">
+          <div class="css-controls">
+            <h2>Propiedades disponibles</h2>
+            <button data-prop="color" data-value="red">color: red</button>
+            <button data-prop="background-color" data-value="#ffcc00">background-color: #ffcc00</button>
+            <button data-prop="border-radius" data-value="32px">border-radius: 32px</button>
+            <button data-prop="border" data-value="4px dashed #00b2ff">border: 4px dashed #00b2ff</button>
+            <button data-prop="font-weight" data-value="bold">font-weight: bold</button>
+            <button data-prop="box-shadow" data-value="0 4px 16px #0003">box-shadow: 0 4px 16px #0003</button>
+            <button data-prop="font-size" data-value="2rem">font-size: 2rem</button>
+            <button data-prop="reset">Reiniciar</button>
+          </div>
+          <div class="css-preview">
+            <div class="css-target" id="cssTarget">¡Hola CSS!</div>
+
+          </div>
+        </div>
+        <section class="priority-section">
+          <h2>Prioridad de reglas CSS</h2>
+          <p>Haz clic en las reglas para ver cuál gana. El color final del texto muestra la prioridad:</p>
+          <div class="priority-controls">
+            <button data-css=".demo { color: blue; }">.demo { color: blue; }</button>
+            <button data-css="#demo { color: green; }">#demo { color: green; }</button>
+            <button data-css=".demo { color: red !important; }">.demo { color: red !important; }</button>
+            <button data-css="reset">Reiniciar</button>
+          </div>
+          <div class="css-target demo" id="priorityTarget">Prioridad CSS</div>
+          <div class="css-console" id="priorityConsole">/* Haz clic en las reglas */</div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <main-footer></main-footer>
+  <script>
+    const target = document.getElementById('cssTarget');
+    const code = document.getElementById('cssCode');
+    const consoleEl = document.getElementById('cssConsole');
+    const buttons = document.querySelectorAll('.css-controls button');
+    let applied = {};
+    let priorityStyles = {};
+    function updateCode() {
+      if (Object.keys(applied).length === 0) {
+        code.textContent = '/* Haz clic en los botones */';
+        document.getElementById('cssConsole').textContent = '/* CSS aplicable aquí */';
+        return;
+      }
+      let lines = Object.entries(applied).map(([k,v]) => `${k.replace(/[A-Z]/g, m => '-' + m.toLowerCase())}: ${v};`);
+      code.textContent = lines.join('\n');
+      document.getElementById('cssConsole').textContent = `#cssTarget {\n  ${lines.join('\n  ')}\n}`;
+    }
+    function applyStyles() {
+      target.style = '';
+      Object.entries(applied).forEach(([k,v]) => {
+        target.style.setProperty(k, v);
+      });
+    }
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (btn.dataset.prop === 'reset') {
+          applied = {};
+          buttons.forEach(b => b.classList.remove('active'));
+          applyStyles();
+          updateCode();
+          return;
+        }
+        const prop = btn.dataset.prop;
+        const value = btn.dataset.value;
+        if (applied[prop] === value) {
+          delete applied[prop];
+          btn.classList.remove('active');
+        } else {
+          applied[prop] = value;
+          btn.classList.add('active');
+        }
+        applyStyles();
+        updateCode();
+      });
+    });
+    // Juego de prioridad CSS
+    const priorityTarget = document.getElementById('priorityTarget');
+    const priorityConsole = document.getElementById('priorityConsole');
+    let priorityRules = [];
+    function updatePriority() {
+      let styleTag = document.getElementById('priorityStyle');
+      if (styleTag) styleTag.remove();
+      styleTag = document.createElement('style');
+      styleTag.id = 'priorityStyle';
+      styleTag.textContent = priorityRules.join('\n');
+      document.head.appendChild(styleTag);
+      if (priorityRules.length === 0) {
+        priorityConsole.textContent = '/* Haz clic en las reglas */';
+      } else {
+        priorityConsole.textContent = priorityRules.join('\n');
+      }
+    }
+    document.querySelectorAll('.priority-controls button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (btn.dataset.css === 'reset') {
+          priorityRules = [];
+          updatePriority();
+          return;
+        }
+        priorityRules.push(btn.dataset.css);
+        updatePriority();
+      });
+    });
+    updatePriority();
+  </script>
+</body>
+</html>

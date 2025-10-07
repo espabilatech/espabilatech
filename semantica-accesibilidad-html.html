@@ -6,8 +6,12 @@
   <meta name="description" content="Día 9 - Semántica y accesibilidad - Curso de HTML desde cero">
   <title>Semántica y accesibilidad</title>
   
-  <link rel="stylesheet" href="lecciones.css">
+  <link rel="stylesheet" href="assets/header.css">
+  <link rel="stylesheet" href="assets/sidebar.css">
+  <link rel="stylesheet" href="assets/footer.css">
+  <link rel="stylesheet" href="assets/lecciones.css">
   <script src="components/header.js" defer></script>
+    <script src="components/code-block.js" defer></script>
   <script src="components/sidebar.js" defer></script>
   <script src="components/footer.js" defer></script>
 </head>
@@ -21,7 +25,6 @@
     <div class="content-wrapper">
   <main class="main-content" id="main-content">
         <h1 class="page-title">Semántica y accesibilidad</h1>
-  <section class="section">
           <h2 class="section-title">Qué aprenderás</h2>
           <ul>
             <li>Por qué usar etiquetas semánticas (<code>&lt;main&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;aside&gt;</code>).</li>
@@ -29,21 +32,21 @@
           </ul>
         </section>
   <section class="section">
-          <h2 class="section-title">Ejemplo</h2>
-          <pre class="code-block"><code>&lt;main&gt;
+          <h2 class="section-title">Ejemplo de estructura semántica</h2>
+          <code-block title="Estructura semántica básica" language="html" code="&lt;main&gt;
   &lt;article&gt;
     &lt;h1&gt;Artículo principal&lt;/h1&gt;
     &lt;p&gt;Contenido...&lt;/p&gt;
   &lt;/article&gt;
-&lt;/main&gt;</code></pre>
+&lt;/main&gt;"></code-block>
         </section>
   <section class="section">
           <h2 class="section-title">Ejercicio</h2>
           <p>Revisa una de tus páginas y mejora la accesibilidad: añade atributos <code>alt</code> a imágenes, asocia <code>&lt;label&gt;</code>s a inputs y comprueba que el contraste del texto es correcto.</p>
         </section>
         <nav class="pagination">
-          <a class="pagination-link prev" href="dia08.html">Anterior</a>
-          <a class="pagination-link next" href="dia10.html">Siguiente</a>
+          <a class="pagination-link prev" href="css-basico-html.html">Anterior</a>
+          <a class="pagination-link next" href="proyecto-final-html.html">Siguiente</a>
         </nav>
       </main>
     </div>

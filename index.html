@@ -31,7 +31,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
-    
+
+    <link rel="stylesheet" href="assets/lecciones.css">
     <!-- Estilos CSS -->
     <style>
         /* Variables CSS */
@@ -481,43 +482,6 @@
             color: var(--color-secondary);
         }
 
-        /* Sección de Tecnologías */
-        .tecnologias {
-            background-color: var(--color-gray);
-        }
-
-        .tecnologias-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: var(--spacing-md);
-        }
-
-        .tecnologia-card {
-            background-color: white;
-            padding: var(--spacing-lg);
-            border-radius: var(--border-radius-md);
-            text-align: center;
-            transition: all var(--transition-bounce);
-            box-shadow: var(--shadow-sm);
-            cursor: pointer;
-        }
-
-        .tecnologia-card:hover, .tecnologia-card:focus {
-            transform: translateY(-5px) rotate(3deg);
-            box-shadow: var(--shadow-md);
-            background-color: var(--color-light);
-        }
-
-        .tecnologia-icon {
-            font-size: 2.5rem;
-            margin-bottom: var(--spacing-md);
-        }
-
-        .tecnologia-card h3 {
-            font-size: 1.2rem;
-            color: var(--color-secondary);
-        }
-
         /* Sección de Cursos */
         .cursos {
             background-color: white;
@@ -653,9 +617,8 @@
         }
 
         .profesor-image img {
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-md);
             transition: transform var(--transition-normal);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
         }
 
         .profesor-image img:hover {
@@ -1258,7 +1221,6 @@
                 <ul id="main-menu" class="nav-links">
                     <li><a href="#inicio" class="nav-link">Inicio</a></li>
                     <li><a href="#cursos" class="nav-link">Cursos</a></li>
-                    <li><a href="#tecnologias" class="nav-link">Tecnologías</a></li>
                     <li><a href="#profesor" class="nav-link">Tu Profe</a></li>
                     <li><a href="#comunidad" class="nav-link">Comunidad</a></li>
                     <li><a href="#contacto" class="nav-link">Contacto</a></li>
@@ -1367,58 +1329,8 @@
                 </div>
             </div>
         </section>
+    
         
-        <!-- Tecnologías Section -->
-        <section id="tecnologias" class="tecnologias">
-            <div class="container">
-                <h2>Tecnologías que dominarás 💪</h2>
-                <p class="section-description">Aprenderás las herramientas más demandadas en el mercado laboral actual. ¡Las empresas se pelearán por contratarte!</p>
-                
-                <div class="tecnologias-grid">
-                    <div class="tecnologia-card" tabindex="0">
-                        <div class="tecnologia-icon">🌐</div>
-                        <h3>HTML5</h3>
-                    </div>
-                    
-                    <div class="tecnologia-card" tabindex="0">
-                        <div class="tecnologia-icon">🎨</div>
-                        <h3>CSS3</h3>
-                    </div>
-                    
-                    <div class="tecnologia-card" tabindex="0">
-                        <div class="tecnologia-icon">⚡</div>
-                        <h3>JavaScript</h3>
-                    </div>
-                    
-                    <div class="tecnologia-card" tabindex="0">
-                        <div class="tecnologia-icon">🅰️</div>
-                        <h3>Angular</h3>
-                    </div>
-                    
-                    <div class="tecnologia-card" tabindex="0">
-                        <div class="tecnologia-icon">🦅</div>
-                        <h3>Nest.js</h3>
-                    </div>
-                    
-                    <div class="tecnologia-card" tabindex="0">
-                        <div class="tecnologia-icon">📘</div>
-                        <h3>TypeScript</h3>
-                    </div>
-                    
-                    <div class="tecnologia-card" tabindex="0">
-                        <div class="tecnologia-icon">🌊</div>
-                        <h3>Tailwind CSS</h3>
-                    </div>
-                    
-                    <div class="tecnologia-card" tabindex="0">
-                        <div class="tecnologia-icon">🔄</div>
-                        <h3>Git</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Cursos Section -->
         <section id="cursos" class="cursos">
             <div class="container">
                 <h2>Nuestros Cursos Gratuitos 🎓</h2>

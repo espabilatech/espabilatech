@@ -24,7 +24,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="lecciones.css">
+  <link rel="stylesheet" href="assets/header.css">
+  <link rel="stylesheet" href="assets/sidebar.css">
+  <link rel="stylesheet" href="assets/footer.css">
+  <link rel="stylesheet" href="assets/lecciones.css">
+  <script src="components/header.js" defer></script>
+  <script src="components/sidebar.js" defer></script>
+  <script src="components/footer.js" defer></script>
+  <script src="components/code-block.js" defer></script>
 
 </head>
 <body>
@@ -34,79 +41,17 @@
   <!-- Overlay para menú móvil -->
   <div class="overlay"></div>
 
-  <!-- Header -->
-  <header>
-    <div class="logo-container">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M8 3H5C3.89543 3 3 3.89543 3 5V8M21 8V5C21 3.89543 20.1046 3 19 3H16M16 21H19C20.1046 21 21 20.1046 21 19V16M3 16V19C3 20.1046 3.89543 21 5 21H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M9 9L15 15M15 9L9 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span class="logo-text">espabilaTech Docs</span>
-    </div>
-    <div class="header-actions">
-  <button class="theme-toggle" aria-label="Cambiar tema">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M12 2V4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M12 20V22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M4.93 4.93L6.34 6.34" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M17.66 17.66L19.07 19.07" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M2 12H4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M20 12H22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M6.34 17.66L4.93 19.07" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M19.07 4.93L17.66 6.34" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-  <button class="mobile-menu-toggle" aria-label="Abrir menú">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
-    </div>
-  </header>
+  <main-header></main-header>
 
   <!-- Contenedor principal -->
   <div class="main-container">
     <!-- Sidebar -->
-  <aside class="sidebar">
-      <div class="sidebar-header">
-        <h2 class="sidebar-title">Retros de Programación</h2>
-      </div>
-      
-      <nav class="sidebar-nav">
-        <div class="nav-group">
-          <h3 class="nav-group-title">Introducción</h3>
-          <ul class="nav-items">
-            <li class="nav-item">
-              <a href="#introduccion" class="nav-link active">¿Qué son los retros?</a>
-            </li>
-          </ul>
-        </div>
-        <div class="nav-group">
-          <h3 class="nav-group-title">Fundamentos</h3>
-          <ul class="nav-items">
-            <li class="nav-item"><a href="dia01.html" class="nav-link">¿Qué es HTML?</a></li>
-            <li class="nav-item"><a href="dia02.html" class="nav-link">Etiquetas básicas</a></li>
-            <li class="nav-item"><a href="dia03.html" class="nav-link">Enlaces y SEO</a></li>
-            <li class="nav-item"><a href="dia04.html" class="nav-link">Imágenes y multimedia</a></li>
-            <li class="nav-item"><a href="dia05.html" class="nav-link">Listas y organización</a></li>
-            <li class="nav-item"><a href="dia06.html" class="nav-link">Formularios</a></li>
-            <li class="nav-item"><a href="dia07.html" class="nav-link">Tablas</a></li>
-            <li class="nav-item"><a href="dia08.html" class="nav-link">CSS básico</a></li>
-            <li class="nav-item"><a href="dia09.html" class="nav-link">Semántica y accesibilidad</a></li>
-            <li class="nav-item"><a href="dia10.html" class="nav-link">Proyecto final</a></li>
-            <li class="nav-item"><a href="dia11.html" class="nav-link">Git y GitHub</a></li>
-          </ul>
-        </div>
-      </nav>
-    </aside>
+    <side-bar></side-bar>
 
     <!-- Contenido principal y tabla de contenidos -->
     <div class="content-wrapper">
       <!-- Contenido principal -->
-  <main class="main-content" id="main-content">
+      <main class="main-content" id="main-content">
         <h1 class="page-title">Retros de Programación</h1>
         
         <section id="introduccion" class="section">
@@ -162,17 +107,11 @@
           </p>
           
           <h3 class="subsection-title">Declaración de variables</h3>
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-language">JavaScript</span>
-              <button class="copy-button" data-code="let nombre = 'espabilaTech';
 const edad = 2;
 let estaActivo = true;">Copiar</button>
-            </div>
-            <pre><code>let nombre = 'espabilaTech';
 const edad = 2;
 let estaActivo = true;</code></pre>
-          </div>
+          <code-block title="JavaScript" language="JavaScript" code="let nombre = 'espabilaTech';&#10;const edad = 2;&#10;let estaActivo = true;"></code-block>
           
           <h3 class="subsection-title">Tipos de datos</h3>
           <p class="content-text">
@@ -208,10 +147,6 @@ let estaActivo = true;</code></pre>
           </p>
           
           <h3 class="subsection-title">Operadores aritméticos</h3>
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-language">JavaScript</span>
-              <button class="copy-button" data-code="let a = 10;
 let b = 5;
 
 let suma = a + b;      // 15
@@ -220,8 +155,6 @@ let multiplicacion = a * b;  // 50
 let division = a / b;  // 2
 let modulo = a % b;    // 0
 let exponente = a ** b; // 100000">Copiar</button>
-            </div>
-            <pre><code>let a = 10;
 let b = 5;
 
 let suma = a + b;      // 15
@@ -230,13 +163,9 @@ let multiplicacion = a * b;  // 50
 let division = a / b;  // 2
 let modulo = a % b;    // 0
 let exponente = a ** b; // 100000</code></pre>
-          </div>
+          <code-block title="JavaScript" language="JavaScript" code="let a = 10;&#10;let b = 5;&#10;&#10;let suma = a + b;      // 15&#10;let resta = a - b;     // 5&#10;let multiplicacion = a * b;  // 50&#10;let division = a / b;  // 2&#10;let modulo = a % b;    // 0&#10;let exponente = a ** b; // 100000"></code-block>
           
           <h3 class="subsection-title">Operadores de comparación</h3>
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-language">JavaScript</span>
-              <button class="copy-button" data-code="let x = 5;
 let y = '5';
 
 console.log(x == y);   // true (compara valor, con coerción de tipos)
@@ -245,8 +174,6 @@ console.log(x != y);   // false
 console.log(x !== y);  // true
 console.log(x > 3);    // true
 console.log(x <= 5);   // true">Copiar</button>
-            </div>
-            <pre><code>let x = 5;
 let y = '5';
 
 console.log(x == y);   // true (compara valor, con coerción de tipos)
@@ -255,7 +182,7 @@ console.log(x != y);   // false
 console.log(x !== y);  // true
 console.log(x > 3);    // true
 console.log(x <= 5);   // true</code></pre>
-          </div>
+          <code-block title="JavaScript" language="JavaScript" code="let x = 5;&#10;let y = '5';&#10;&#10;console.log(x == y);   // true (compara valor, con coerción de tipos)&#10;console.log(x === y);  // false (compara valor y tipo)&#10;console.log(x != y);   // false&#10;console.log(x !== y);  // true&#10;console.log(x > 3);    // true&#10;console.log(x <= 5);   // true"></code-block>
         </section>
         
         <section id="condicionales" class="section">
@@ -265,10 +192,6 @@ console.log(x <= 5);   // true</code></pre>
           </p>
           
           <h3 class="subsection-title">if, else if, else</h3>
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-language">JavaScript</span>
-              <button class="copy-button" data-code="let edad = 18;
 
 if (edad < 18) {
   console.log('Eres menor de edad');
@@ -277,8 +200,6 @@ if (edad < 18) {
 } else {
   console.log('Eres mayor de edad');
 }">Copiar</button>
-            </div>
-            <pre><code>let edad = 18;
 
 if (edad < 18) {
   console.log('Eres menor de edad');
@@ -287,28 +208,18 @@ if (edad < 18) {
 } else {
   console.log('Eres mayor de edad');
 }</code></pre>
-          </div>
+          <code-block title="JavaScript" language="JavaScript" code="let edad = 18;&#10;&#10;if (edad < 18) {&#10;  console.log('Eres menor de edad');&#10;} else if (edad === 18) {&#10;  console.log('Acabas de cumplir la mayoría de edad');&#10;} else {&#10;  console.log('Eres mayor de edad');&#10;}"></code-block>
           
           <h3 class="subsection-title">Operador ternario</h3>
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-language">JavaScript</span>
-              <button class="copy-button" data-code="let edad = 20;
 let mensaje = edad >= 18 ? 'Eres mayor de edad' : 'Eres menor de edad';
 
 console.log(mensaje); // 'Eres mayor de edad'">Copiar</button>
-            </div>
-            <pre><code>let edad = 20;
 let mensaje = edad >= 18 ? 'Eres mayor de edad' : 'Eres menor de edad';
 
 console.log(mensaje); // 'Eres mayor de edad'</code></pre>
-          </div>
+          <code-block title="JavaScript" language="JavaScript" code="let edad = 20;&#10;let mensaje = edad >= 18 ? 'Eres mayor de edad' : 'Eres menor de edad';&#10;&#10;console.log(mensaje); // 'Eres mayor de edad'"></code-block>
           
           <h3 class="subsection-title">switch</h3>
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-language">JavaScript</span>
-              <button class="copy-button" data-code="let dia = 3;
 let nombreDia;
 
 switch (dia) {
@@ -338,8 +249,6 @@ switch (dia) {
 }
 
 console.log(nombreDia); // 'Miércoles'">Copiar</button>
-            </div>
-            <pre><code>let dia = 3;
 let nombreDia;
 
 switch (dia) {
@@ -369,7 +278,7 @@ switch (dia) {
 }
 
 console.log(nombreDia); // 'Miércoles'</code></pre>
-          </div>
+          <code-block title="JavaScript" language="JavaScript" code="let dia = 3;&#10;let nombreDia;&#10;&#10;switch (dia) {&#10;  case 1:&#10;    nombreDia = 'Lunes';&#10;    break;&#10;  case 2:&#10;    nombreDia = 'Martes';&#10;    break;&#10;  case 3:&#10;    nombreDia = 'Miércoles';&#10;    break;&#10;  case 4:&#10;    nombreDia = 'Jueves';&#10;    break;&#10;  case 5:&#10;    nombreDia = 'Viernes';&#10;    break;&#10;  case 6:&#10;    nombreDia = 'Sábado';&#10;    break;&#10;  case 7:&#10;    nombreDia = 'Domingo';&#10;    break;&#10;  default:&#10;    nombreDia = 'Día inválido';&#10;}&#10;&#10;console.log(nombreDia); // 'Miércoles'"></code-block>
         </section>
         
         <section id="bucles" class="section">
@@ -379,68 +288,44 @@ console.log(nombreDia); // 'Miércoles'</code></pre>
           </p>
           
           <h3 class="subsection-title">for</h3>
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-language">JavaScript</span>
-              <button class="copy-button" data-code="for (let i = 0; i < 5; i++) {
   console.log(`Iteración ${i}`);
 }">Copiar</button>
-            </div>
-            <pre><code>for (let i = 0; i < 5; i++) {
   console.log(`Iteración ${i}`);
 }</code></pre>
-          </div>
+          <code-block title="JavaScript" language="JavaScript" code="for (let i = 0; i < 5; i++) {&#10;  console.log(`Iteración ${i}`);&#10;}"></code-block>
           
           <h3 class="subsection-title">while</h3>
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-language">JavaScript</span>
-              <button class="copy-button" data-code="let i = 0;
 while (i < 5) {
   console.log(`Iteración ${i}`);
   i++;
 }">Copiar</button>
-            </div>
-            <pre><code>let i = 0;
 while (i < 5) {
   console.log(`Iteración ${i}`);
   i++;
 }</code></pre>
-          </div>
+          <code-block title="JavaScript" language="JavaScript" code="let i = 0;&#10;while (i < 5) {&#10;  console.log(`Iteración ${i}`);&#10;  i++;&#10;}"></code-block>
           
           <h3 class="subsection-title">do...while</h3>
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-language">JavaScript</span>
-              <button class="copy-button" data-code="let i = 0;
 do {
   console.log(`Iteración ${i}`);
   i++;
 } while (i < 5);">Copiar</button>
-            </div>
-            <pre><code>let i = 0;
 do {
   console.log(`Iteración ${i}`);
   i++;
 } while (i < 5);</code></pre>
-          </div>
+          <code-block title="JavaScript" language="JavaScript" code="let i = 0;&#10;do {&#10;  console.log(`Iteración ${i}`);&#10;  i++;&#10;} while (i < 5);"></code-block>
           
           <h3 class="subsection-title">for...of</h3>
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-language">JavaScript</span>
-              <button class="copy-button" data-code="const frutas = ['manzana', 'banana', 'naranja', 'uva'];
 
 for (const fruta of frutas) {
   console.log(fruta);
 }">Copiar</button>
-            </div>
-            <pre><code>const frutas = ['manzana', 'banana', 'naranja', 'uva'];
 
 for (const fruta of frutas) {
   console.log(fruta);
 }</code></pre>
-          </div>
+          <code-block title="JavaScript" language="JavaScript" code="const frutas = ['manzana', 'banana', 'naranja', 'uva'];&#10;&#10;for (const fruta of frutas) {&#10;  console.log(fruta);&#10;}"></code-block>
         </section>
         
         <section id="ejercicio-1" class="section">
@@ -874,54 +759,7 @@ for (const fruta of frutas) {
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-logo">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M8 3H5C3.89543 3 3 3.89543 3 5V8M21 8V5C21 3.89543 20.1046 3 19 3H16M16 21H19C20.1046 21 21 20.1046 21 19V16M3 16V19C3 20.1046 3.89543 21 5 21H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M9 9L15 15M15 9L9 15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <span class="footer-logo-text">espabilaTech</span>
-      </div>
-      
-      <div class="footer-links">
-        <a href="#" class="footer-link">Inicio</a>
-        <a href="#" class="footer-link">Cursos</a>
-        <a href="#" class="footer-link">Documentación</a>
-        <a href="#" class="footer-link">Comunidad</a>
-        <a href="#" class="footer-link">Contacto</a>
-      </div>
-      
-      <div class="footer-social">
-        <a href="#" class="social-link" aria-label="Twitter">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M23 3.00005C22.0424 3.67552 20.9821 4.19216 19.86 4.53005C19.2577 3.83756 18.4573 3.34674 17.567 3.12397C16.6767 2.90121 15.7395 2.95724 14.8821 3.2845C14.0247 3.61176 13.2884 4.19445 12.773 4.95376C12.2575 5.71308 11.9877 6.61238 12 7.53005V8.53005C10.2426 8.57561 8.50127 8.18586 6.93101 7.39549C5.36074 6.60513 4.01032 5.43868 3 4.00005C3 4.00005 -1 13 8 17C5.94053 18.398 3.48716 19.099 1 19C10 24 21 19 21 7.50005C20.9991 7.2215 20.9723 6.94364 20.92 6.67005C21.9406 5.66354 22.6608 4.39276 23 3.00005Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-        <a href="#" class="social-link" aria-label="Instagram">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M16 11.37C16.1234 12.2022 15.9813 13.0522 15.5938 13.799C15.2063 14.5458 14.5931 15.1514 13.8416 15.5297C13.0901 15.9079 12.2384 16.0396 11.4078 15.9059C10.5771 15.7723 9.80976 15.3801 9.21484 14.7852C8.61992 14.1902 8.22773 13.4229 8.09407 12.5922C7.9604 11.7615 8.09207 10.9099 8.47033 10.1584C8.84859 9.40685 9.45419 8.79374 10.201 8.40624C10.9478 8.01874 11.7978 7.87659 12.63 8C13.4789 8.12588 14.2649 8.52146 14.8717 9.1283C15.4785 9.73515 15.8741 10.5211 16 11.37Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M17.5 6.5H17.51" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-        <a href="#" class="social-link" aria-label="YouTube">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M22.54 6.42C22.4212 5.94541 22.1793 5.51057 21.8387 5.15941C21.498 4.80824 21.0708 4.55318 20.6 4.42C18.88 4 12 4 12 4C12 4 5.12 4 3.4 4.46C2.92925 4.59318 2.50198 4.84824 2.16135 5.19941C1.82072 5.55057 1.57879 5.98541 1.46 6.46C1.14521 8.20556 0.991235 9.97631 1 11.75C0.988687 13.537 1.14266 15.3213 1.46 17.08C1.59096 17.5398 1.83831 17.9581 2.17814 18.2945C2.51798 18.6308 2.93882 18.8738 3.4 19C5.12 19.46 12 19.46 12 19.46C12 19.46 18.88 19.46 20.6 19C21.0708 18.8668 21.498 18.6118 21.8387 18.2606C22.1793 17.9094 22.4212 17.4746 22.54 17C22.8524 15.2676 22.9965 13.5103 23 11.75C23.0113 9.96295 22.8573 8.1787 22.54 6.42Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M9.75 15.02L15.5 11.75L9.75 8.48001V15.02Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-        <a href="#" class="social-link" aria-label="GitHub">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M16 22V18.13C16.0375 17.6532 15.9731 17.1738 15.811 16.7238C15.6489 16.2738 15.3929 15.8634 15.06 15.52C18.2 15.17 21.5 13.98 21.5 8.52C21.4997 7.12383 20.9627 5.7812 20 4.77C20.4559 3.54851 20.4236 2.19835 19.91 0.999999C19.91 0.999999 18.73 0.649999 16 2.48C13.708 1.85882 11.292 1.85882 9 2.48C6.27 0.649999 5.09 0.999999 5.09 0.999999C4.57638 2.19835 4.54414 3.54851 5 4.77C4.03013 5.7887 3.49252 7.14346 3.5 8.55C3.5 13.97 6.8 15.16 9.94 15.55C9.611 15.89 9.35726 16.2954 9.19531 16.7399C9.03335 17.1844 8.96681 17.6581 9 18.13V22M9 19C4 20.5 4 16.5 2 16L9 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-      
-      <p class="footer-copyright">© 2025 espabilaTech. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+  <main-footer></main-footer>
 
   <!-- JavaScript -->
   <script>
@@ -941,31 +779,6 @@ for (const fruta of frutas) {
       });
     }
 
-    // Alternar tema claro/oscuro
-    const themeToggle = document.querySelector('.theme-toggle');
-    const themeIcon = document.querySelector('.theme-toggle svg');
-    
-    if (themeToggle && themeIcon) {
-      themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme');
-        // Actualizar icono
-        if (document.body.classList.contains('dark-theme')) {
-          themeIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`;
-        } else {
-          themeIcon.innerHTML = `
-            <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 2V4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 20V22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M4.93 4.93L6.34 6.34" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M17.66 17.66L19.07 19.07" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M2 12H4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M20 12H22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M6.34 17.66L4.93 19.07" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M19.07 4.93L17.66 6.34" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          `;
-        }
-      });
-    }
     
     // Mostrar/ocultar soluciones de ejercicios
     const solutionToggles = document.querySelectorAll('.exercise-solution-toggle');

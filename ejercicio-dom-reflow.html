@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ejercicio: Manipulación DOM y Reflow</title>
+  <link rel="stylesheet" href="assets/header.css">
+  <link rel="stylesheet" href="assets/sidebar.css">
+  <link rel="stylesheet" href="assets/footer.css">
+  <link rel="stylesheet" href="assets/lecciones.css">
+  <script src="components/header.js" defer></script>
+  <script src="components/sidebar.js" defer></script>
+  <script src="components/footer.js" defer></script>
+  <script src="components/code-block.js" defer></script>
+</head>
+<body>
+  <main-header></main-header>
+  <div class="main-container">
+    <side-bar></side-bar>
+    <div class="content-wrapper">
+      <main class="main-content" id="main-content">
+        <h1 class="page-title">Ejercicio: Manipulación DOM y Reflow</h1>
+        <section class="section">
+          <h2 class="section-title">¿Qué pasa si modificas el DOM en bucle?</h2>
+          <p>Prueba este código en la consola y observa el impacto en el rendimiento:</p>
+          <code-block language="js" title="Forzar reflow" code='for(let i=0;i<1000;i++){
+  const el = document.createElement("div");
+  el.textContent = i;
+  document.body.appendChild(el);
+  // Forzar reflow:
+  void el.offsetHeight;
+}'></code-block>
+          <p>¿Qué ocurre si eliminas la línea <code>void el.offsetHeight;</code>?</p>
+        </section>
+        <section class="section">
+          <h2 class="section-title">Referencias</h2>
+          <ul>
+            <li><a href="https://web.dev/forced-reflow/" target="_blank">web.dev: Forced reflow</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work#layout_and_paint" target="_blank">MDN: Layout and Paint</a></li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </div>
+  <main-footer></main-footer>
+</body>
+</html>
