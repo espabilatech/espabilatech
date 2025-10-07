@@ -16,51 +16,51 @@ class SideBar extends HTMLElement {
           <details class="nav-group">
             <summary class="nav-group-title">Control de versiones<span class="chevron"></span></summary>
             <ul class="nav-items">
-              <li class="nav-item"><span class="completion-indicator"></span><a href="git-github-html.html" class="nav-link">¿Qué es Git y GitHub?</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="git-init-clone.html" class="nav-link">Crear y clonar repositorios</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="git-status-add-commit.html" class="nav-link">Status, add y commit</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="git-remote-push-pull.html" class="nav-link">Remote, push y pull</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="git-fetch.html" class="nav-link">Fetch</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="git-branch-merge.html" class="nav-link">Branch, checkout y merge</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="git/git-github-html.html" class="nav-link">¿Qué es Git y GitHub?</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="git/git-init-clone.html" class="nav-link">Crear y clonar repositorios</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="git/git-status-add-commit.html" class="nav-link">Status, add y commit</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="git/git-remote-push-pull.html" class="nav-link">Remote, push y pull</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="git/git-fetch.html" class="nav-link">Fetch</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="git/git-branch-merge.html" class="nav-link">Branch, checkout y merge</a></li>
             </ul>
           </details>
           <details class="nav-group">
             <summary class="nav-group-title">Fundamentos de la Web<span class="chevron"></span></summary>
             <ul class="nav-items">
-              <li class="nav-item"><span class="completion-indicator"></span><a href="introduccion-html.html" class="nav-link">¿Qué es HTML?</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="estructura-etiquetas-html.html" class="nav-link">Estructura básica y etiquetas</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="listas-organizacion-html.html" class="nav-link">Listas y organización</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="enlaces-seo-html.html" class="nav-link">Enlaces y SEO</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="imagenes-multimedia-html.html" class="nav-link">Imágenes y multimedia</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="html/introduccion-html.html" class="nav-link">¿Qué es HTML?</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="html/estructura-etiquetas-html.html" class="nav-link">Estructura básica y etiquetas</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="html/listas-organizacion-html.html" class="nav-link">Listas y organización</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="html/enlaces-seo-html.html" class="nav-link">Enlaces y SEO</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="html/imagenes-multimedia-html.html" class="nav-link">Imágenes y multimedia</a></li>
             </ul>
           </details>
           <details class="nav-group">
             <summary class="nav-group-title">Rendimiento y métricas<span class="chevron"></span></summary>
             <ul class="nav-items">
-              <li class="nav-item"><span class="completion-indicator"></span><a href="rendimiento-html.html" class="nav-link">Visión general de rendimiento</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="dom-cssom-render.html" class="nav-link">DOM, CSSOM y renderizado</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="layers-compositing.html" class="nav-link">Layers y compositing</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="web-metrics.html" class="nav-link">Métricas web y LCP</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="pitfalls-rendimiento.html" class="nav-link">Errores comunes de rendimiento</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="optimizacion-estilos-scripts.html" class="nav-link">Optimización de estilos y scripts</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="css-costoso.html" class="nav-link">Cambios CSS más costosos</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="ejercicio-medir-lcp.html" class="nav-link">Ejercicio: medir LCP</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="ejercicio-dom-reflow.html" class="nav-link">Ejercicio: DOM y reflow</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="ejercicio-layers.html" class="nav-link">Ejercicio: layers y animaciones</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="performance/rendimiento-html.html" class="nav-link">Visión general de rendimiento</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="performance/dom-cssom-render.html" class="nav-link">DOM, CSSOM y renderizado</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="performance/layers-compositing.html" class="nav-link">Layers y compositing</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="performance/web-metrics.html" class="nav-link">Métricas web y LCP</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="performance/pitfalls-rendimiento.html" class="nav-link">Errores comunes de rendimiento</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="performance/optimizacion-estilos-scripts.html" class="nav-link">Optimización de estilos y scripts</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="performance/css-costoso.html" class="nav-link">Cambios CSS más costosos</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="performance/ejercicio-medir-lcp.html" class="nav-link">Ejercicio: medir LCP</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="performance/ejercicio-dom-reflow.html" class="nav-link">Ejercicio: DOM y reflow</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="performance/ejercicio-layers.html" class="nav-link">Ejercicio: layers y animaciones</a></li>
             </ul>
           </details>
           <details class="nav-group">
             <summary class="nav-group-title">Formularios y datos<span class="chevron"></span></summary>
             <ul class="nav-items">
-              <li class="nav-item"><span class="completion-indicator"></span><a href="formularios-html.html" class="nav-link">Formularios</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="tablas-html.html" class="nav-link">Tablas</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="html/formularios-html.html" class="nav-link">Formularios</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="html/tablas-html.html" class="nav-link">Tablas</a></li>
             </ul>
           </details>
           <details class="nav-group">
             <summary class="nav-group-title">CSS desde cero<span class="chevron"></span></summary>
             <ul class="nav-items">
-              <li class="nav-item"><span class="completion-indicator"></span><a href="css-basico-html.html" class="nav-link">CSS básico</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="css-avanzado-selectores-especificidad.html" class="nav-link">CSS avanzado: selectores y especificidad</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="css/css-basico-html.html" class="nav-link">CSS básico</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="css/css-avanzado-selectores-especificidad.html" class="nav-link">CSS avanzado: selectores y especificidad</a></li>
             </ul>
           </details>
           <details class="nav-group">
@@ -79,8 +79,8 @@ class SideBar extends HTMLElement {
           <details class="nav-group">
             <summary class="nav-group-title">Extras y Juegos<span class="chevron"></span></summary>
             <ul class="nav-items">
-              <li class="nav-item"><span class="completion-indicator"></span><a href="juego-css.html" class="nav-link">Juego: Propiedades CSS</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="juego-html-bloque-inline.html" class="nav-link">Juego: Bloque vs Inline</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="css/juego-css.html" class="nav-link">Juego: Propiedades CSS</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="html/juego-html-bloque-inline.html" class="nav-link">Juego: Bloque vs Inline</a></li>
               <li class="nav-item"><span class="completion-indicator"></span><a href="recursos.html" class="nav-link">Recursos y comunidad</a></li>
             </ul>
           </details>
