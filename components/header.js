@@ -1,6 +1,10 @@
 class MainHeader extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = `
+    if (!this.shadowRoot) this.attachShadow({ mode: 'open' });
+    const isSubdir = location.pathname.includes('/css/') || location.pathname.includes('/git/') || location.pathname.includes('/html/') || location.pathname.includes('/performance/');
+    const prefix = isSubdir ? '../' : '';
+    this.shadowRoot.innerHTML = `
+      <link rel="stylesheet" href="${prefix}assets/header.css">
       <header>
         <div class="logo-container">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -35,7 +39,7 @@ class MainHeader extends HTMLElement {
     `;
 
     // Theme toggle logic (global)
-    const themeToggle = this.querySelector('.theme-toggle');
+    const themeToggle = this.shadowRoot.querySelector('.theme-toggle');
     const themeIcon = themeToggle.querySelector('svg');
 
     // Set initial icon based on current theme

@@ -1,6 +1,10 @@
 class MainFooter extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = `
+    if (!this.shadowRoot) this.attachShadow({ mode: 'open' });
+    const isSubdir = location.pathname.includes('/css/') || location.pathname.includes('/git/') || location.pathname.includes('/html/') || location.pathname.includes('/performance/');
+    const prefix = isSubdir ? '../' : '';
+    this.shadowRoot.innerHTML = `
+      <link rel="stylesheet" href="${prefix}assets/footer.css">
       <footer>
         <div class="footer-content">
           <div class="footer-logo">

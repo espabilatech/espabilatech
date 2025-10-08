@@ -104,7 +104,9 @@ class CodeBlock extends HTMLElement {
   render() {
     const title = this.getAttribute('title') || '';
     const language = (this.getAttribute('language') || '').toLowerCase();
-    const code = this.getAttribute('code') || '';
+    // Prefer projected content as source; fallback to code="..."
+    let projected = (this.innerHTML || '').trim();
+    const code = projected.length ? projected : (this.getAttribute('code') || '');
     // Determine if result tab should be shown
     let showResult = true;
     if (this.hasAttribute('no-result')) {

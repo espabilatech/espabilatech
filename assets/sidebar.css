@@ -22,8 +22,8 @@
 }
 
 .nav-group {
-  margin-bottom: var(--spacing-lg);
   border-bottom: 1px solid #eee;
+  padding: 0.9rem 0 0.2rem;
 }
 
 .nav-group-title {
@@ -39,6 +39,10 @@
   user-select: none;
   padding: 0.5rem 0.25rem;
   gap: 0.5rem;
+}
+
+.nav-group-title:hover{
+  font-weight: 800;
 }
 
 .nav-group-title .chevron {

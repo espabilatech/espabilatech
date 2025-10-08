@@ -1,6 +1,11 @@
 class SideBar extends HTMLElement {
   connectedCallback() {
-    this.innerHTML = `
+    if (!this.shadowRoot) this.attachShadow({ mode: 'open' });
+    const isSubdir = location.pathname.includes('/css/') || location.pathname.includes('/git/') || location.pathname.includes('/html/') || location.pathname.includes('/performance/');
+    const prefix = isSubdir ? '../' : '';
+    this.shadowRoot.innerHTML = `
+      <link rel="stylesheet" href="${prefix}assets/sidebar.css">
+      <link rel="stylesheet" href="${prefix}assets/lecciones.css">
       <aside class="sidebar">
         <div class="sidebar-header">
           <h2 class="sidebar-title">Retros de Programación</h2>
@@ -43,10 +48,10 @@ class SideBar extends HTMLElement {
               <li class="nav-item"><span class="completion-indicator"></span><a href="performance/web-metrics.html" class="nav-link">Métricas web y LCP</a></li>
               <li class="nav-item"><span class="completion-indicator"></span><a href="performance/pitfalls-rendimiento.html" class="nav-link">Errores comunes de rendimiento</a></li>
               <li class="nav-item"><span class="completion-indicator"></span><a href="performance/optimizacion-estilos-scripts.html" class="nav-link">Optimización de estilos y scripts</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="performance/css-costoso.html" class="nav-link">Cambios CSS más costosos</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="css/css-costoso.html" class="nav-link">Cambios CSS más costosos</a></li>
               <li class="nav-item"><span class="completion-indicator"></span><a href="performance/ejercicio-medir-lcp.html" class="nav-link">Ejercicio: medir LCP</a></li>
               <li class="nav-item"><span class="completion-indicator"></span><a href="performance/ejercicio-dom-reflow.html" class="nav-link">Ejercicio: DOM y reflow</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="performance/ejercicio-layers.html" class="nav-link">Ejercicio: layers y animaciones</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="css/ejercicio-layers.html" class="nav-link">Ejercicio: layers y animaciones</a></li>
             </ul>
           </details>
           <details class="nav-group">
@@ -87,12 +92,20 @@ class SideBar extends HTMLElement {
         </nav>
       </aside>
     `;
+    // Normalizar rutas de enlaces según el nivel actual (raíz o subcarpeta)
+    this.shadowRoot.querySelectorAll('.nav-link').forEach(a => {
+      const href = a.getAttribute('href') || '';
+      if (!/^(?:https?:|mailto:|#|\/|\.\.\/)/.test(href)) {
+        a.setAttribute('href', prefix + href);
+      }
+    });
     // Marcar como activo el enlace correspondiente a la página actual
-    const links = this.querySelectorAll('.nav-link');
+    const links = this.shadowRoot.querySelectorAll('.nav-link');
     const current = window.location.pathname.split('/').pop();
     let activeDetails = null;
     links.forEach(link => {
-      if (link.getAttribute('href') === current) {
+      const linkFile = new URL(link.href, window.location.href).pathname.split('/').pop();
+      if (linkFile === current) {
         link.classList.add('active');
         // Buscar el details padre y abrirlo
         const details = link.closest('details');
@@ -102,7 +115,7 @@ class SideBar extends HTMLElement {
       }
     });
     // Cerrar todos los details y abrir solo el del módulo actual
-    this.querySelectorAll('.nav-group').forEach(d => d.removeAttribute('open'));
+    this.shadowRoot.querySelectorAll('.nav-group').forEach(d => d.removeAttribute('open'));
     if (activeDetails) activeDetails.setAttribute('open', '');
 
     // Completion indicator logic
@@ -116,7 +129,7 @@ class SideBar extends HTMLElement {
       localStorage.setItem(COMPLETED_KEY, JSON.stringify(obj));
     }
     const completed = getCompleted();
-    this.querySelectorAll('.nav-item').forEach(item => {
+    this.shadowRoot.querySelectorAll('.nav-item').forEach(item => {
       const link = item.querySelector('.nav-link');
       const indicator = item.querySelector('.completion-indicator');
       if (!link || !indicator) return;
