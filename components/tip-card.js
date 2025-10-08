@@ -14,7 +14,7 @@ class TipCard extends HTMLElement {
     const prefix = isSubdir ? '../' : '';
     const title = this.getAttribute('title') || 'Consejo';
     this.shadowRoot.innerHTML = `
-      <link rel="stylesheet" href="${prefix}assets/lecciones.css">
+      <link rel="stylesheet" href="${prefix}../assets/lecciones.css">
       <article class="card consejo">
         <h3 class="card-title">${title}</h3>
         <div class="card-content"><slot></slot></div>
