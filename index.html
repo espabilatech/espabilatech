@@ -33,8 +33,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../assets/lecciones.css">
-    <!-- Estilos CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
         /* Variables CSS */
         :root {
             /* Colores más vibrantes y juveniles */
@@ -115,22 +126,6 @@
             list-style: none;
         }
 
-        /* Accesibilidad */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 0;
-            background: var(--color-secondary);
-            color: white;
-            padding: 8px;
-            z-index: 100;
-            transition: top 0.3s;
-        }
-
-        .skip-link:focus {
-            top: 0;
-        }
-
         /* Contenedor */
         .container {
             width: 100%;
@@ -178,6 +173,12 @@
         .logo-text {
             font-size: 1.25rem;
             font-weight: 700;
+            color: var(--color-secondary);
+        }
+
+        .logo-ch {
+            color: var(--color-happy);
+            font-weight: 800;
         }
 
         .nav-links {
@@ -225,25 +226,6 @@
             background: none;
             border: none;
             cursor: pointer;
-        }
-
-        /* Banner de cursos gratuitos */
-        .free-banner {
-            background-color: var(--color-happy);
-            color: var(--color-secondary);
-            text-align: center;
-            padding: 0.5rem;
-            font-weight: 600;
-        }
-
-        .free-banner span {
-            display: inline-block;
-            animation: bounce 1s infinite alternate;
-        }
-
-        @keyframes bounce {
-            from { transform: translateY(0); }
-            to { transform: translateY(-5px); }
         }
 
         /* Hero Section */
@@ -1194,23 +1176,13 @@
     </style>
 </head>
 <body>
-    <!-- Skip to main content para accesibilidad -->
-    
-    
-    <!-- Banner de cursos gratuitos -->
-    <div class="free-banner">
-        <span>🎉 ¡TODOS NUESTROS CURSOS SON GRATUITOS! 🎉</span> Apóyanos con un café si te gustan ☕
-    </div>
-    
     <header>
         <div class="container">
             <nav class="main-nav">
                 <div class="logo-container">
                     <a href="/" aria-label="Inicio de espabilaTech">
-                        <svg class="code-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"/>
-                        </svg>
-                        <span class="logo-text">espabilaTech</span>
+                        
+                        <span class="logo-text"> { espabilaTe<span class="logo-ch">ch</span> }</span>
                     </a>
                 </div>
                 
@@ -1221,7 +1193,6 @@
                 <ul id="main-menu" class="nav-links">
                     <li><a href="#inicio" class="nav-link">Inicio</a></li>
                     <li><a href="#cursos" class="nav-link">Cursos</a></li>
-                    <li><a href="#profesor" class="nav-link">Tu Profe</a></li>
                     <li><a href="#comunidad" class="nav-link">Comunidad</a></li>
                     <li><a href="#contacto" class="nav-link">Contacto</a></li>
                 </ul>
@@ -1236,15 +1207,15 @@
         <section id="inicio" class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Aprende a programar de forma <span class="highlight">divertida</span> y sin comerte la cabeza 🤯</h1>
-                    <p>En espabilaTech te enseñamos a programar con tecnologías web modernas de forma práctica y amena. ¡Sin rollos teóricos aburridos! ¡Despega tu carrera en el desarrollo web! 🚀</p>
+                    <h1>Aprende a programar de forma <span class="highlight">práctica</span> y sin comerte la cabeza 🤯</h1>
+                    <p>¡Sin rollos teóricos aburridos! 🚀</p>
                     <div class="hero-buttons">
                         <a href="#cursos" class="primary-button">Ver cursos gratuitos</a>
                         <a href="#conocenos" class="secondary-button">¿Quiénes somos?</a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ChatGPT%20Image%2017%20abr%202025%2C%2016_50_48-PzqbdyWlj2okwECM2luu3r7Jd7cfY3.png" alt="Logo de espabilaTech" width="500" height="400" loading="lazy">
+                    <img src="assets/logo.png" alt="Logo de espabilaTech" width="500" height="400" loading="lazy">
                 </div>
             </div>
         </section>
@@ -1253,7 +1224,7 @@
         <section class="coffee-section">
             <div class="container">
                 <h2>¡Invítanos a un café! ☕</h2>
-                <p>Todos nuestros cursos son 100% gratuitos y lo seguirán siendo. Si te gustan y quieres apoyarnos, puedes invitarnos a un café para que sigamos creando contenido de calidad.</p>
+                <p>Todos nuestros cursos son 100% gratuitos. Si te gustan y quieres apoyarnos, puedes invitarnos a un café para que sigamos creando contenido de calidad.</p>
                 <a href="https://www.buymeacoffee.com/espabilatech" target="_blank" rel="noopener noreferrer" class="coffee-button">
                     <span class="coffee-icon">☕</span> Invítanos a un café
                 </a>
@@ -1263,8 +1234,8 @@
         <!-- Ventajas Section -->
         <section id="conocenos" class="ventajas">
             <div class="container">
-                <h2>¿Por qué mola espabilaTech? 😎</h2>
-                <p class="section-description">Nuestra misión es clara: ayudarte a dominar el desarrollo web sin morir en el intento. Sin palabras raras ni conceptos abstractos.</p>
+                <h2>¿Por qué espabilaTech? 😎</h2>
+                <p class="section-description">Nuestra misión es clara: Sin perdidas de tiempo foco en lo importante.</p>
                 
                 <div class="ventajas-grid">
                     <div class="ventaja-card">
@@ -1311,7 +1282,7 @@
                         
                         <div class="profesor-stats">
                             <div class="stat-item">
-                                <span class="stat-number">10+</span>
+                                <span class="stat-number">12+</span>
                                 <span class="stat-label">Años de experiencia</span>
                             </div>
                             
@@ -1435,6 +1406,68 @@
             </div>
         </section>
         
+        <section class="bg-[#003b7a] text-[#fff9f0] py-20 px-6 md:px-16 font-[Poppins]">
+  <!-- Header -->
+  <div class="max-w-6xl mx-auto text-center mb-16">
+    <h1 class="text-4xl md:text-5xl font-bold mb-2">Programa Frontend 13 Meses</h1>
+    <p class="text-[#00b2ff] text-lg italic">"Mismo rigor, menos relleno."</p>
+  </div>
+
+  <!-- Presentación -->
+  <div class="max-w-4xl mx-auto text-center mb-16">
+    <p class="text-lg leading-relaxed">
+      Un programa intensivo y progresivo diseñado para convertirte en Frontend Engineer profesional.  
+      Aprende desde los fundamentos hasta la arquitectura de microfrontends con proyectos reales y entregables escalables.
+    </p>
+  </div>
+
+  <!-- Proyectos -->
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+    <!-- Card Proyecto -->
+    <div class="bg-[#ff4425] rounded-2xl p-6 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+      <h3 class="text-2xl font-semibold mb-2">🛒 spabilaShop</h3>
+      <p>Proyecto principal: e-commerce modular con carrito, checkout, clima y gastos integrados. Escalable a microfrontends con NX.</p>
+    </div>
+
+    <div class="bg-[#00b2ff] text-[#003b7a] rounded-2xl p-6 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+      <h3 class="text-2xl font-semibold mb-2">🌦️ WeatherHub</h3>
+      <p>App del tiempo conectada a API real. Se integra en spabilaShop como microfrontend informativo.</p>
+    </div>
+
+    <div class="bg-[#ffcc00] text-[#003b7a] rounded-2xl p-6 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+      <h3 class="text-2xl font-semibold mb-2">💰 TripSplit</h3>
+      <p>Gestor de gastos entre amigos y viajes. Comparte datos con WeatherHub y se integra en spabilaShop.</p>
+    </div>
+
+    <div class="bg-[#fff9f0] text-[#003b7a] rounded-2xl p-6 shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl">
+      <h3 class="text-2xl font-semibold mb-2">🧑‍💼 Portfolio</h3>
+      <p>Tu carta de presentación profesional. Incluye proyectos, stack y enlaces a despliegues reales.</p>
+    </div>
+  </div>
+
+  <!-- Botón de descarga -->
+  <div class="text-center mb-16">
+    <a href="#" class="inline-block bg-[#ff4425] text-white font-semibold py-3 px-8 rounded-full text-lg transition-all duration-300 hover:bg-[#ffcc00] hover:text-[#003b7a] hover:shadow-lg">
+      Descargar programa completo (PDF)
+    </a>
+  </div>
+
+  <!-- CTA final -->
+  <div class="max-w-4xl mx-auto text-center border-t border-[#00b2ff]/30 pt-10">
+    <h3 class="text-2xl font-semibold mb-4 text-[#00b2ff]">¿Listo para convertirte en Frontend Engineer?</h3>
+    <p class="text-lg mb-2">Escríbenos y da el primer paso hacia tu futuro en el desarrollo web.</p>
+    <a href="mailto:info@espabilatech.com" class="font-semibold text-[#ffcc00] underline hover:text-[#ff4425] transition-colors duration-300">
+      info@espabilatech.com
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center mt-16 text-sm text-[#fff9f0]/60">
+    © 2025 espabilaTech — Creador e instructor: Christian Heredia
+  </footer>
+</section>
+
+
         <!-- Inscripción Section -->
         <section id="inscribete" class="inscripcion">
             <div class="container">

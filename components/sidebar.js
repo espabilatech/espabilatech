@@ -19,24 +19,15 @@ class SideBar extends HTMLElement {
             </ul>
           </details>
           <details class="nav-group">
-            <summary class="nav-group-title">Control de versiones<span class="chevron"></span></summary>
-            <ul class="nav-items">
-              <li class="nav-item"><span class="completion-indicator"></span><a href="git/git-github-html.html" class="nav-link">¿Qué es Git y GitHub?</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="git/git-init-clone.html" class="nav-link">Crear y clonar repositorios</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="git/git-status-add-commit.html" class="nav-link">Status, add y commit</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="git/git-remote-push-pull.html" class="nav-link">Remote, push y pull</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="git/git-fetch.html" class="nav-link">Fetch</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="git/git-branch-merge.html" class="nav-link">Branch, checkout y merge</a></li>
-            </ul>
-          </details>
-          <details class="nav-group">
             <summary class="nav-group-title">Fundamentos de la Web<span class="chevron"></span></summary>
             <ul class="nav-items">
+              <li class="nav-item"><span class="completion-indicator"></span><a href="git/git-github-html.html" class="nav-link">¿Qué es Git y GitHub?</a></li>
               <li class="nav-item"><span class="completion-indicator"></span><a href="html/introduccion-html.html" class="nav-link">¿Qué es HTML?</a></li>
               <li class="nav-item"><span class="completion-indicator"></span><a href="html/estructura-etiquetas-html.html" class="nav-link">Estructura básica y etiquetas</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="html/listas-organizacion-html.html" class="nav-link">Listas y organización</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="css/css-basico-html.html" class="nav-link">CSS básico</a></li>
               <li class="nav-item"><span class="completion-indicator"></span><a href="html/enlaces-seo-html.html" class="nav-link">Enlaces y SEO</a></li>
               <li class="nav-item"><span class="completion-indicator"></span><a href="html/imagenes-multimedia-html.html" class="nav-link">Imágenes y multimedia</a></li>
+              <li class="nav-item"><span class="completion-indicator"></span><a href="html/listas-organizacion-html.html" class="nav-link">Listas y organización</a></li>
             </ul>
           </details>
           <details class="nav-group">
@@ -51,13 +42,6 @@ class SideBar extends HTMLElement {
             <ul class="nav-items">
               <li class="nav-item"><span class="completion-indicator"></span><a href="css/css-basico-html.html" class="nav-link">CSS básico</a></li>
               <li class="nav-item"><span class="completion-indicator"></span><a href="css/css-avanzado-selectores-especificidad.html" class="nav-link">CSS avanzado: selectores y especificidad</a></li>
-            </ul>
-          </details>
-          <details class="nav-group">
-            <summary class="nav-group-title">Accesibilidad y buenas prácticas<span class="chevron"></span></summary>
-            <ul class="nav-items">
-              <li class="nav-item"><span class="completion-indicator"></span><a href="semantica-accesibilidad-html.html" class="nav-link">Semántica y accesibilidad</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="buenas-practicas.html" class="nav-link">Buenas prácticas de código</a></li>
             </ul>
           </details>
           <details class="nav-group">
