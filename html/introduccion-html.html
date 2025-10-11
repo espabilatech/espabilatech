@@ -1,51 +1,165 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Día 1 - Introducción al mundo web - Curso de HTML desde cero">
-  <title>¿Qué es HTML?</title>
-  <link rel="stylesheet" href="../assets/lecciones.css">
-  <script src="../components/code-block.js" defer></script>
-  <script src="../components/header.js" defer></script>
-  <script src="../components/sidebar.js" defer></script>
-  <script src="../components/footer.js" defer></script>
-</head>
-<body>
-  <main-header></main-header>
-  <div class="main-container">
-    <side-bar></side-bar>
-    <div class="content-wrapper">
-      <main class="main-content" id="main-content">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Día 1 - Introducción al mundo web - Curso de HTML desde cero"
+    />
+    <title>¿Qué es HTML?</title>
+    <link rel="stylesheet" href="../assets/lecciones.css" />
+    <script src="../components/code-block.js" defer></script>
+    <script src="../components/header.js" defer></script>
+    <script src="../components/sidebar.js" defer></script>
+    <script src="../components/footer.js" defer></script>
+  </head>
+
+  <body>
+    <main-header></main-header>
+    <div class="main-container">
+      <side-bar></side-bar>
+
+      <main class="main-content">
         <h1 class="page-title">¿Qué es HTML?</h1>
+
         <section class="section">
           <h2 class="section-title">Introducción a HTML</h2>
           <p class="content-text">
-            HTML (HyperText Markup Language) es el lenguaje estándar para crear páginas web. Permite estructurar el contenido usando "etiquetas" que el navegador interpreta para mostrar texto, imágenes, enlaces y otros elementos.
+            HTML (HyperText Markup Language) es el lenguaje estándar para crear
+            páginas web. Permite estructurar el contenido usando "etiquetas" que
+            el navegador interpreta para mostrar texto, imágenes, enlaces y
+            otros elementos.
           </p>
         </section>
-        <section class="section">
+
+        <section>
+          <h2>Extension de las paginas web</h2>
+          <p>
+            Las paginas web son un documento de texto pero en vez de .pdf o .doc
+            son <b>.html</b>
+          </p>
+          <div class="exercise-hint">
+            <strong>Pruebalo:</strong> Abre el bloc de notas escribe algo y
+            guardalo como .html, ahora podras abrir el archivo en tu navegador.
+          </div>
+          <br />
+        </section>
+
+        <section class="explicacion-etiquetas">
+          <h2>Las etiquetas son 'educadas'</h2>
+          <p>
+            Al Igual que nosotros, las etiquetas saludan al entrar y al salir,
+            es decir casi todas las etiquetas tienen
+            <strong>una apertura</strong>
+            y <strong>un cierre</strong>.
+          </p>
+
+          <ul>
+            <li>
+              El saludo inicial se establece usando los simbolos "&lt;&gt;" 👉
+              &lt;etiqueta&gt;
+            </li>
+            <li>
+              La despedida se establece usando la barra "/" 👉 &lt;/etiqueta&gt;
+            </li>
+          </ul>
+
+          <p>
+            Por lo tanto si quisiesemos crear un parrafo escribiriamos: <br />
+            &lt;p&gt; Esto seria el contenido del parrafo &lt;/p&gt;
+          </p>
+
           <h2 class="section-title">Ejemplo básico</h2>
-          <code-block title="HTML" language="HTML" code="&lt;!DOCTYPE html&gt;&#10;&lt;html lang='es'&gt;&#10;  &lt;head&gt;&#10;    &lt;meta charset='UTF-8'&gt;&#10;    &lt;title&gt;Mi primera página&lt;/title&gt;&#10;  &lt;/head&gt;&#10;  &lt;body&gt;&#10;    &lt;h1&gt;¡Hola, mundo!&lt;/h1&gt;&#10;  &lt;/body&gt;&#10;&lt;/html&gt;">
+          <code-block title="index.html" language="HTML">
+            <h1>Esto un titulo de importancia 1</h1>
+            <h2>Titular de importancia 2</h2>
+            <p>Esto es un parrafo</p>
+            Y esto no es nada porque ya esta fuera de las etiquetas
           </code-block>
         </section>
+
+        <section class="section">
+          <h2 class="section-title">Ejemplo completo</h2>
+          <code-block
+            title="index.html"
+            language="HTML"
+            code="&lt;!DOCTYPE html&gt;&#10;&lt;html lang='es'&gt;&#10;  &lt;head&gt;&#10;    &lt;meta charset='UTF-8'&gt;&#10;    &lt;title&gt;Mi primera página&lt;/title&gt;&#10;  &lt;/head&gt;&#10;  &lt;body&gt;&#10;    &lt;h1&gt;¡Hola, mundo!&lt;/h1&gt;&#10;  &lt;/body&gt;&#10;&lt;/html&gt;"
+          >
+          </code-block>
+        </section>
+
         <section class="section">
           <h2 class="section-title">Ejercicio</h2>
-          <div class="card consejo">
-            <h3 class="card-title">Consejo</h3>
-            <p>¡No olvides guardar tu archivo como <code>.html</code> y abrirlo en tu navegador!</p>
-          </div>
           <div class="exercise-card">
             <div class="exercise-header">Ejercicio práctico</div>
             <div class="exercise-content">
-              <h3 class="exercise-title">Crea tu primera página HTML</h3>
-              <p class="exercise-description">Crea un archivo <code>index.html</code> con un título y un encabezado <code>&lt;h1&gt;</code> que diga "¡Bienvenido a HTML!".</p>
+              <h2 class="exercise-title">Crea tu primera página HTML</h2>
+              <p class="exercise-description">
+                Crea un archivo <code>index.html</code> con un título y un
+                encabezado <code>&lt;h1&gt;</code> que diga "¡Bienvenido a
+                HTML!".
+              </p>
             </div>
           </div>
         </section>
+
+        <div class="alert alert-info">
+          <div class="alert-icon">ℹ️</div>
+          <div class="alert-content">
+            <div class="alert-title">Informacion adicional</div>
+            <p>
+              <code>&lt;!DOCTYPE html&gt;</code><br />
+              Declara que el documento es <strong>HTML5</strong>. No es una
+              etiqueta HTML propiamente; le indica al navegador que renderice en
+              modo estándar (no en modo "compatibilidad"). Debe ser la primera
+              línea del archivo.
+            </p>
+
+            <p>
+              <code>&lt;html lang='es'&gt;</code><br />
+              Elemento raíz del documento. El atributo
+              <code>lang="es"</code> indica que el contenido está en
+              <strong>español</strong> (útil para accesibilidad, lectores de
+              pantalla y SEO). Todo lo demás va dentro de este elemento. Se
+              cierra al final con <code>&lt;/html&gt;</code>.
+            </p>
+
+            <p>
+              <code>&lt;head&gt;</code><br />
+              Sección de <strong>metadatos</strong>: contiene información sobre
+              la página que NO se muestra directamente (título, codificación,
+              enlaces a CSS/JS, meta tags, etc.). Se cierra con
+              <code>&lt;/head&gt;</code>.
+            </p>
+
+            <p>
+              <code>&lt;meta charset='UTF-8'&gt;</code><br />
+              Define la <strong>codificación de caracteres</strong> del
+              documento. UTF-8 es la codificación recomendada porque soporta
+              caracteres latinos (ñ, acentos) y la mayoría de idiomas. Debe ir
+              lo antes posible dentro de <code>&lt;head&gt;</code>.
+            </p>
+
+            <p>
+              <code>&lt;title&gt;Mi primera página&lt;/title&gt;</code><br />
+              El <strong>título</strong> de la pestaña del navegador y el texto
+              que usan los buscadores cuando indexan la página. No aparece
+              dentro del contenido visible de la página, pero sí en la pestaña y
+              en favoritos.
+            </p>
+
+            <p>
+              <code>&lt;Body&gt;</code><br />
+              Contiene la información <strong>visible</strong> de la página web
+              (texto, imágenes, enlaces, etc.). Todo lo que quieras que los
+              usuarios vean debe ir dentro de este elemento. Se cierra con
+              <code>&lt;/body&gt;</code>.
+            </p>
+          </div>
+        </div>
       </main>
     </div>
-  </div>
-  <main-footer></main-footer>
-</body>
+    <main-footer></main-footer>
+  </body>
 </html>

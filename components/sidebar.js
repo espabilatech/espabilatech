@@ -8,14 +8,13 @@ class SideBar extends HTMLElement {
       <link rel="stylesheet" href="${prefix}assets/lecciones.css">
       <aside class="sidebar">
         <div class="sidebar-header">
-          <h2 class="sidebar-title">Retros de Programación</h2>
+          <h2 class="sidebar-title">Curso HTML y CSS</h2>
         </div>
         <nav class="sidebar-nav">
           <details class="nav-group">
             <summary class="nav-group-title">Primeros pasos<span class="chevron"></span></summary>
             <ul class="nav-items">
               <li class="nav-item"><span class="completion-indicator"></span><a href="curso-html.html" class="nav-link">¿Qué son los retros?</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="primeros-pasos.html" class="nav-link">¿Cómo usar este curso?</a></li>
             </ul>
           </details>
           <details class="nav-group">
@@ -40,7 +39,6 @@ class SideBar extends HTMLElement {
           <details class="nav-group">
             <summary class="nav-group-title">CSS desde cero<span class="chevron"></span></summary>
             <ul class="nav-items">
-              <li class="nav-item"><span class="completion-indicator"></span><a href="css/css-basico-html.html" class="nav-link">CSS básico</a></li>
               <li class="nav-item"><span class="completion-indicator"></span><a href="css/css-avanzado-selectores-especificidad.html" class="nav-link">CSS avanzado: selectores y especificidad</a></li>
             </ul>
           </details>
