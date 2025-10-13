@@ -20,7 +20,7 @@
     <div class="content-wrapper">
       <main class="main-content" id="main-content">
         <h1 class="page-title">Cambios CSS más costosos</h1>
-        <section class="section">
+        <section >
           <h2 class="section-title">¿Qué cambios de CSS afectan más al rendimiento?</h2>
           <ul>
             <li><b>Propiedades que disparan <u>reflow</u> (layout):</b>
@@ -43,13 +43,13 @@
             </li>
           </ul>
         </section>
-        <section class="section">
+        <section >
           <h2 class="section-title">Ejemplo interactivo</h2>
           <p>Prueba cambiar <code>margin</code> vs <code>background</code> en la consola y observa el impacto en el renderizado.</p>
           <code-block language="js" title="Cambiar margin (costoso)" code='document.querySelector(".caja").style.margin = "100px";'></code-block>
           <code-block language="js" title="Cambiar background (menos costoso)" code='document.querySelector(".caja").style.background = "red";'></code-block>
         </section>
-        <section class="section">
+        <section >
           <h2 class="section-title">Referencias útiles</h2>
           <ul>
             <li><a href="https://csstriggers.com/" target="_blank">CSS Triggers (csstriggers.com)</a></li>

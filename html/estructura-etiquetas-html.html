@@ -1,141 +1,246 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Día 2 - Estructura del HTML y etiquetas básicas - Curso de HTML desde cero">
-  <title>Etiquetas básicas</title>
-  
-  
-  
-  
-  <link rel="stylesheet" href="../assets/lecciones.css">
-  <script src="../components/code-block.js" defer></script>
-  <script src="../components/header.js" defer></script>
-  <script src="../components/sidebar.js" defer></script>
-  <script src="../components/footer.js" defer></script>
-</head>
-<body>
-  
-  
-  
-  <main-header></main-header>
-  <div class="main-container">
-  <side-bar></side-bar>
-    <div class="content-wrapper">
-  <main class="main-content" id="main-content">
-        <h1 class="page-title">Etiquetas básicas</h1>
-  <section class="section">
-          <h2 class="section-title">Qué aprenderás</h2>
-          <ul>
-            <li>Etiquetas, atributos, diferencias entre bloque y en línea.</li>
-            <li>Uso de &lt;h1&gt;–&lt;h6&gt;, &lt;p&gt;, &lt;div&gt;, &lt;span&gt;.</li>
-          </ul>
-        </section>
-  <section class="section">
-          <h2 class="section-title">Bloque vs en línea</h2>
-          <p><strong>Bloque:</strong> ocupa todo el ancho y empieza en nueva línea. Ej: &lt;div&gt;, &lt;p&gt;, &lt;h1&gt;.</p>
-          <p><strong>En línea:</strong> solo ocupa lo necesario. Ej: &lt;span&gt;, &lt;a&gt;, &lt;strong&gt;.</p>
-        </section>
-  <section class="section">
-          <h2 class="section-title">Ejemplo</h2>
-          <code-block title="HTML" language="HTML" code="&lt;div&gt;&#10;  &lt;h1&gt;Título principal&lt;/h1&gt;&#10;  &lt;p&gt;Párrafo con &lt;span&gt;una parte en &lt;strong&gt;negrita&lt;/strong&gt;&lt;/span&gt;.&lt;/p&gt;&#10;&lt;/div&gt;"></code-block>
-        </section>
-  <section class="section">
-          <h2 class="section-title">Ejercicio</h2>
-          <p>Crea una página con un <code>&lt;div&gt;</code> que contenga un título (<code>&lt;h1&gt;</code>), dos párrafos y un <code>&lt;span&gt;</code> dentro del segundo párrafo destacando una palabra.</p>
-        </section>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Estructura del HTML y etiquetas básicas - Curso de HTML desde cero"
+    />
+    <title>Etiquetas básicas</title>
 
+    <link rel="stylesheet" href="../assets/lecciones.css" />
+    <script src="../components/code-block.js" defer></script>
+    <script src="../components/header.js" defer></script>
+    <script src="../components/sidebar.js" defer></script>
+    <script src="../components/footer.js" defer></script>
+  </head>
+  <body>
+    <main-header></main-header>
+    <div class="main-container">
+      <side-bar></side-bar>
+      <div class="content-wrapper">
+        <main class="main-content" id="main-content">
+          <h1 class="page-title">Etiquetas básicas</h1>
 
-<section id="etiquetas-contenedoras">
-  <h1>Etiquetas contenedoras en HTML</h1>
+          <section>
+            <h2 class="section-title">Bloque vs en línea</h2>
+            <p>
+              <strong>Bloque:</strong> Son casi todas las etiquetas y ocupan todo el ancho disponible. En el
+              ejemplo de abajo vamos añadirle un borde a todos los elementos para ver lo que realmente ocupan.
+            </p>
+            <code-block
+              title="HTML"
+              language="HTML"
+            >
+              <style>
+              .special * {
+                border: 1px solid black;
+              }
+              </style>
+              <section class="special">
+                <div >Esto es un div</div>
+                <p >Esto es un párrafo (p)</p>
+                <h3 >Esto es un título h3</h3>
+                <h4 >Esto es un título h4</h4>
 
-  <p>
-    En HTML, las <strong>etiquetas contenedoras</strong> (también llamadas
-    <em>etiquetas de bloque</em> o <em>estructurales</em>) son aquellas que
-    sirven para <strong>agrupar, organizar o contener otros elementos HTML</strong>
-    dentro de ellas, ya sean texto, imágenes u otras etiquetas.
-  </p>
+              </section>
+            </code-block>
 
+            <p>
+              <strong>En línea:</strong> solo ocupa lo necesario. Suelen ser etiquetas que modifican texto
+              o no tienen elementos dentro.
+            </p>
+                        <code-block
+              title="HTML"
+              language="HTML"
+            >
+              <style>
+              .special * {
+                border: 1px solid black;
+              }
+              </style>
+              <section class="special">
+                <span >Esto es un span</span>
+                <b >Esto es bold</b>
+                <em >Esto es un em</em>
+                <u>subrayado</u>
+                <input type="text" placeholder="esto es un input"/>
 
-  <h2>1. Contenedores genéricos</h2>
-  <table border="1" cellpadding="6">
-    <thead>
-      <tr>
-        <th>Etiqueta</th>
-        <th>Descripción</th>
-        <th>Tipo</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>&lt;div&gt;</code></td>
-        <td>Contenedor genérico para agrupar bloques de contenido.</td>
-        <td>De bloque</td>
-      </tr>
-      <tr>
-        <td><code>&lt;span&gt;</code></td>
-        <td>Contenedor en línea para agrupar texto o elementos dentro de una línea.</td>
-        <td>En línea</td>
-      </tr>
-    </tbody>
-  </table>
+              </section>
+            </code-block>
+          </section>
+          <section>
+            <h2 class="section-title">Ejemplo</h2>
+            <code-block
+              title="HTML"
+              language="HTML"
+              code="&lt;div&gt;&#10;  &lt;h1&gt;Título principal&lt;/h1&gt;&#10;  &lt;p&gt;Párrafo con &lt;span&gt;una parte en &lt;strong&gt;negrita&lt;/strong&gt;&lt;/span&gt;.&lt;/p&gt;&#10;&lt;/div&gt;"
+            ></code-block>
+          </section>
+          <section>
+            <h2 class="section-title">Ejercicio</h2>
+            <p>
+              Crea una página con un <code>&lt;div&gt;</code> que contenga un
+              título (<code>&lt;h1&gt;</code>), dos párrafos y un
+              <code>&lt;span&gt;</code> dentro del segundo párrafo destacando
+              una palabra.
+            </p>
+          </section>
 
-  <h2>2. Estructura principal de página</h2>
-  <table border="1" cellpadding="6">
-    <thead>
-      <tr>
-        <th>Etiqueta</th>
-        <th>Descripción</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td><code>&lt;header&gt;</code></td><td>Encabezado de una página o sección (logo, menú, etc.)</td></tr>
-      <tr><td><code>&lt;nav&gt;</code></td><td>Contiene enlaces de navegación.</td></tr>
-      <tr><td><code>&lt;main&gt;</code></td><td>Contiene el contenido principal del documento.</td></tr>
-      <tr><td><code>&lt;section&gt;</code></td><td>Agrupa contenido relacionado dentro de una página.</td></tr>
-      <tr><td><code>&lt;article&gt;</code></td><td>Contiene un contenido independiente, como una noticia o publicación.</td></tr>
-      <tr><td><code>&lt;aside&gt;</code></td><td>Contenido complementario o lateral (barra lateral).</td></tr>
-      <tr><td><code>&lt;footer&gt;</code></td><td>Pie de página o sección.</td></tr>
-    </tbody>
-  </table>
+          <section id="etiquetas-contenedoras">
+            <h1>Etiquetas contenedoras en HTML</h1>
 
-  <h2>3. Contenedores para contenido específico</h2>
-  <table border="1" cellpadding="6">
-    <thead>
-      <tr>
-        <th>Etiqueta</th>
-        <th>Descripción</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td><code>&lt;form&gt;</code></td><td>Contiene elementos de formulario (<code>&lt;input&gt;</code>, <code>&lt;button&gt;</code>, etc.)</td></tr>
-      <tr><td><code>&lt;fieldset&gt;</code></td><td>Agrupa campos dentro de un formulario.</td></tr>
-      <tr><td><code>&lt;label&gt;</code></td><td>Asocia texto con un campo de formulario.</td></tr>
-      <tr><td><code>&lt;table&gt;</code></td><td>Contiene una tabla completa.</td></tr>
-      <tr><td><code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code></td><td>Subcontenedores dentro de una tabla.</td></tr>
-      <tr><td><code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code></td><td>Contienen listas.</td></tr>
-      <tr><td><code>&lt;li&gt;</code></td><td>Contiene un ítem de lista.</td></tr>
-      <tr><td><code>&lt;figure&gt;</code></td><td>Agrupa contenido multimedia (imágenes, diagramas, etc.)</td></tr>
-      <tr><td><code>&lt;figcaption&gt;</code></td><td>Descripción o título para <code>&lt;figure&gt;</code>.</td></tr>
-    </tbody>
-  </table>
+            <p>
+              En HTML, las <strong>etiquetas contenedoras</strong> (también
+              llamadas <em>etiquetas de bloque</em> o <em>estructurales</em>)
+              son aquellas que sirven para
+              <strong
+                >agrupar, organizar o contener otros elementos HTML</strong
+              >
+              dentro de ellas, ya sean texto, imágenes u otras etiquetas.
+            </p>
 
+            <h2>1. Contenedores genéricos</h2>
+            <table cellpadding="6">
+              <thead>
+                <tr>
+                  <th>Etiqueta</th>
+                  <th>Descripción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>&lt;div&gt;</code></td>
+                  <td>
+                    Contenedor genérico para agrupar bloques de contenido.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>&lt;span&gt;</code></td>
+                  <td>
+                    Contenedor en línea para agrupar texto o elementos dentro de
+                    una línea.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
- 
-</section>
+            <h2>2. Estructura principal de página</h2>
+            <table border="1" cellpadding="6">
+              <thead>
+                <tr>
+                  <th>Etiqueta</th>
+                  <th>Descripción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>&lt;header&gt;</code></td>
+                  <td>Encabezado de una página o sección (logo, menú, etc.)</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;nav&gt;</code></td>
+                  <td>Contiene enlaces de navegación.</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;main&gt;</code></td>
+                  <td>Contiene el contenido principal del documento.</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;section&gt;</code></td>
+                  <td>Agrupa contenido relacionado dentro de una página.</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;article&gt;</code></td>
+                  <td>
+                    Contiene un contenido independiente, como una noticia o
+                    publicación.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>&lt;aside&gt;</code></td>
+                  <td>Contenido complementario o lateral (barra lateral).</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;footer&gt;</code></td>
+                  <td>Pie de página o sección.</td>
+                </tr>
+              </tbody>
+            </table>
 
+            <h2>3. Contenedores para contenido específico</h2>
+            <table border="1" cellpadding="6">
+              <thead>
+                <tr>
+                  <th>Etiqueta</th>
+                  <th>Descripción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>&lt;form&gt;</code></td>
+                  <td>
+                    Contiene elementos de formulario
+                    (<code>&lt;input&gt;</code>, <code>&lt;button&gt;</code>,
+                    etc.)
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>&lt;fieldset&gt;</code></td>
+                  <td>Agrupa campos dentro de un formulario.</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;label&gt;</code></td>
+                  <td>Asocia texto con un campo de formulario.</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;table&gt;</code></td>
+                  <td>Contiene una tabla completa.</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>,
+                    <code>&lt;tfoot&gt;</code>
+                  </td>
+                  <td>Subcontenedores dentro de una tabla.</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code></td>
+                  <td>Contienen listas.</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;li&gt;</code></td>
+                  <td>Contiene un ítem de lista.</td>
+                </tr>
+                <tr>
+                  <td><code>&lt;figure&gt;</code></td>
+                  <td>
+                    Agrupa contenido multimedia (imágenes, diagramas, etc.)
+                  </td>
+                </tr>
+                <tr>
+                  <td><code>&lt;figcaption&gt;</code></td>
+                  <td>
+                    Descripción o título para <code>&lt;figure&gt;</code>.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
 
-
-        <nav class="pagination">
-          <a class="pagination-link prev" href="introduccion-html.html">Anterior</a>
-          <a class="pagination-link next" href="enlaces-seo-html.html">Siguiente</a>
-        </nav>
-      </main>
+          <nav class="pagination">
+            <a class="pagination-link prev" href="introduccion-html.html"
+              >Anterior</a
+            >
+            <a class="pagination-link next" href="enlaces-seo-html.html"
+              >Siguiente</a
+            >
+          </nav>
+        </main>
+      </div>
     </div>
-  </div>
 
-  
-  <main-footer></main-footer>
-</body>
+    <main-footer></main-footer>
+  </body>
 </html>
