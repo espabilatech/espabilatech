@@ -47,6 +47,12 @@ header {
   font-size: 1.5rem;
 }
 
+@media (max-width: 980px) {
+  .mobile-menu-toggle { display: inline-flex; }
+  /* optional: hide theme toggle on very small screens to save space */
+  .theme-toggle { display: none; }
+}
+
 body.dark-theme header {
   background-color: #111111;
 }

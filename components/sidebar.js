@@ -106,6 +106,34 @@ class SideBar extends HTMLElement {
         indicator.title = completed[link.href] ? 'Completado' : 'Marcar como completado';
       });
     });
+
+    // Close mobile sidebar when clicking a nav link
+    this.shadowRoot.querySelectorAll('.nav-link').forEach(a => {
+      a.addEventListener('click', () => {
+        // close on mobile/tablet to reveal content
+        document.body.classList.remove('sidebar-open');
+      });
+    });
+
+    // Sync body.sidebar-open with internal .open on <aside> (shadow DOM cannot style body directly)
+    const aside = this.shadowRoot.querySelector('.sidebar');
+    function setAsideOpen(open) {
+      if (!aside) return;
+      if (open) aside.classList.add('open'); else aside.classList.remove('open');
+    }
+    // Initial sync
+    setAsideOpen(document.body.classList.contains('sidebar-open'));
+    // Observe body class changes
+    const bodyObserver = new MutationObserver(() => setAsideOpen(document.body.classList.contains('sidebar-open')));
+    bodyObserver.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+    // Cleanup when element removed
+    const ro = new MutationObserver(records => {
+      if (!document.body.contains(this)) {
+        bodyObserver.disconnect();
+        ro.disconnect();
+      }
+    });
+    ro.observe(document.documentElement, { childList: true, subtree: true });
   }
 }
 customElements.define('side-bar', SideBar);

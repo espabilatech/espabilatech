@@ -66,6 +66,35 @@ class MainHeader extends HTMLElement {
       document.body.classList.toggle('dark-theme');
       setThemeIcon();
     });
+
+    // Mobile sidebar toggle
+    const mobileToggle = this.shadowRoot.querySelector('.mobile-menu-toggle');
+    mobileToggle.addEventListener('click', () => {
+      document.body.classList.toggle('sidebar-open');
+      // create global backdrop if missing
+      let globalBackdrop = document.querySelector('.global-sidebar-backdrop');
+      if (!globalBackdrop) {
+        globalBackdrop = document.createElement('div');
+        globalBackdrop.className = 'global-sidebar-backdrop';
+        document.body.appendChild(globalBackdrop);
+        globalBackdrop.addEventListener('click', () => document.body.classList.remove('sidebar-open'));
+      }
+      // toggle backdrop visibility via body class
+      globalBackdrop.style.display = document.body.classList.contains('sidebar-open') ? 'block' : 'none';
+      // move focus to sidebar for accessibility
+      const sidebar = document.querySelector('side-bar');
+      if (document.body.classList.contains('sidebar-open') && sidebar) {
+        const firstLink = sidebar.querySelector('.nav-link');
+        if (firstLink) firstLink.focus();
+      }
+    });
+
+    // Close sidebar with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && document.body.classList.contains('sidebar-open')) {
+        document.body.classList.remove('sidebar-open');
+      }
+    });
   }
 }
 customElements.define('main-header', MainHeader);
