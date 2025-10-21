@@ -1,54 +1,120 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Día 4 - Imágenes y recursos multimedia - Curso de HTML desde cero">
-  <title>Imágenes y multimedia</title>
-  
-  
-  
-  
-  <link rel="stylesheet" href="../assets/lecciones.css">
-  <script src="../components/code-block.js" defer></script>
-  <script src="../components/header.js" defer></script>
-  <script src="../components/sidebar.js" defer></script>
-  <script src="../components/footer.js" defer></script>
-</head>
-<body>
-  
-  
-  
-  <main-header></main-header>
-  <div class="main-container">
-  <side-bar></side-bar>
-    <div class="content-wrapper">
-  <main class="main-content" id="main-content">
-        <h1 class="page-title">Imágenes y multimedia</h1>
-  <section >
-          <h2 class="section-title">Qué aprenderás</h2>
-          <ul>
-            <li>Insertar imágenes con &lt;img&gt; y su atributo <code>alt</code>.</li>
-            <li>Rutas relativas y absolutas.</li>
-            <li>Buenas prácticas para SEO con imágenes.</li>
-          </ul>
-        </section>
-  <section >
-          <h2 class="section-title">Ejemplo</h2>
-          <code-block title="HTML" language="HTML" code="&lt;img src='imagenes/foto.jpg' alt='Foto de perfil'&gt;"></code-block>
-          <p>Si la imagen está en una carpeta llamada <code>imagenes</code> dentro del proyecto, la ruta relativa funciona. Si es externa, usa la URL completa.</p>
-        </section>
-  <section >
-          <h2 class="section-title">Ejercicio</h2>
-          <p>Crea una galería simple con 3 imágenes y un breve texto debajo de cada una. Añade el atributo <code>alt</code> a cada imagen.</p>
-        </section>
-        <nav class="pagination">
-          <a class="pagination-link prev" href="enlaces-seo-html.html">Anterior</a>
-          <a class="pagination-link next" href="listas-organizacion-html.html">Siguiente</a>
-        </nav>
-      </main>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Día 4 - Imágenes y recursos multimedia - Curso de HTML desde cero"
+    />
+    <title>Imágenes y multimedia</title>
+    <link rel="stylesheet" href="../assets/lecciones.css" />
+    <script src="../components/code-block.js" defer></script>
+    <script src="../components/header.js" defer></script>
+    <script src="../components/sidebar.js" defer></script>
+    <script src="../components/footer.js" defer></script>
+  </head>
+  <body>
+    <main-header></main-header>
+    <div class="main-container">
+      <side-bar></side-bar>
+
+        <main class="main-content" id="main-content">
+          <h1 class="page-title">Crea tu primer blog</h1>
+          <section>
+            <h2 class="section-title">Qué aprenderás</h2>
+            <ul>
+              <li>Titulares o cabeceras. <code>&lt;h1&gt;</code></li>
+              <li>Etiquetas de enriquecimiento de texto. <code>&lt;b&gt; &lt;i&gt; &lt;u&gt;</code> </li>
+              <li>
+                Insertar imágenes con <code>&lt;img&gt;</code> y su atributo
+                <code>alt</code>.
+              </li>
+
+              <li>Buenas prácticas para SEO con imágenes.</li>
+            </ul>
+          </section>
+          <section>
+            <h2>Cabeceras o titulares</h2>
+            <p>La etiqueta <b>&lt;h1&gt; hasta &lt;h6&gt;</b> se utilizan para crear diferentes titulares de una página web.
+              Aunque realmente <b>nunca</b> he visto utilizar h5 o h6 en un proyecto real.
+            </p>
+            <p>El h1 es el título más importante y debería ser único en cada página. Los demás se utilizan para
+              estructurar el contenido en secciones y subsecciones.
+            </p>
+
+            <code-block
+              title="HTML"
+              language="HTML"
+            >
+<h1>Esto es un h1</h1>
+<h2>Esto es un h2</h2>
+<h3>Esto es un h3</h3>
+<h4>Esto es un h4</h4>
+<h5>Esto es un h5</h5>
+<h6>Esto es un h6</h6>
+            </code-block>
+
+            <h2>Parrafos y enriquecimiento</h2>
+            <p>Para crear un parrafo se utiliza la etiqueta <b><code>&lt;p&gt;</code></b>. Por defecto añade margenes
+              arriba y abajo para separar los parrafos entre si.
+            </p>
+            <p><b><code>&lt;b&gt;</code></b> resalta el texto en negrita.</p>
+            <p><b><code>&lt;u&gt;</code></b> subraya el texto.</p>
+            <p><b><code>&lt;s&gt;</code></b> tacha el texto.</p>
+            <p><b><code>&lt;i&gt;</code></b> letra cursiva.</p>
+            <cite>Estas etiquetas se pueden combinar entre si.</cite>
+
+            <blockquote>
+              Estas etiquetas no son semánticas, es decir, no aportan significado al texto, 
+              solo lo enriquecen visualmente.
+            </blockquote>
+            
+            <code-block
+              title="HTML"
+              language="HTML"
+            >
+<p>Este es un parrafo y aqui <u>subrayo</u></p>
+<p>Este es otro parrafo con <b>etiqueta bold</b></p>
+<p>Este parrafo <s>lo tacho</s> y una <i>cursiva</i></p>
+            </code-block>
+            
+          </section>
+          <section>
+            <h2 class="section-title">Ejemplo</h2>
+            <code-block
+              title="HTML"
+              language="HTML"
+            >
+<figure>
+  <img src="../assets/img/tagshtml.png" alt="Esquema de etiquetas html" />
+  <figcaption><small>Figura 1: Esquema HTML</small></figcaption>
+</figure>
+          </code-block>
+            <p>
+              Si la imagen está en una carpeta llamada
+              <code>imagenes</code> dentro del proyecto, la ruta relativa
+              funciona. Si es externa, usa la URL completa.
+            </p>
+          </section>
+          <section>
+            <h2 class="section-title">Ejercicio</h2>
+            <p>
+              Crea una galería simple con 3 imágenes y un breve texto debajo de
+              cada una. Añade el atributo <code>alt</code> a cada imagen.
+            </p>
+          </section>
+          <nav class="pagination">
+            <a class="pagination-link prev" href="enlaces-seo-html.html"
+              >Anterior</a
+            >
+            <a class="pagination-link next" href="listas-organizacion-html.html"
+              >Siguiente</a
+            >
+          </nav>
+        </main>
+
     </div>
-  </div>
-  <main-footer></main-footer>
-</body>
+    <main-footer></main-footer>
+  </body>
 </html>

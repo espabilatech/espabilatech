@@ -43,32 +43,11 @@ class SideBar extends HTMLElement {
             </ul>
           </details>
           <details class="nav-group">
-            <summary class="nav-group-title">Proyecto guiado<span class="chevron"></span></summary>
-            <ul class="nav-items">
-              <li class="nav-item"><span class="completion-indicator"></span><a href="proyecto-final-html.html" class="nav-link">Tu primera web personal</a></li>
-            </ul>
-          </details>
-          <details class="nav-group">
             <summary class="nav-group-title">Extras y Juegos<span class="chevron"></span></summary>
             <ul class="nav-items">
               <li class="nav-item"><span class="completion-indicator"></span><a href="css/juego-css.html" class="nav-link">Juego: Propiedades CSS</a></li>
               <li class="nav-item"><span class="completion-indicator"></span><a href="html/juego-html-bloque-inline.html" class="nav-link">Juego: Bloque vs Inline</a></li>
               <li class="nav-item"><span class="completion-indicator"></span><a href="recursos.html" class="nav-link">Recursos y comunidad</a></li>
-            </ul>
-          </details>
-          <details class="nav-group">
-            <summary class="nav-group-title">Rendimiento y métricas<span class="chevron"></span></summary>
-            <ul class="nav-items">
-              <li class="nav-item"><span class="completion-indicator"></span><a href="performance/rendimiento-html.html" class="nav-link">Visión general de rendimiento</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="performance/dom-cssom-render.html" class="nav-link">DOM, CSSOM y renderizado</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="performance/layers-compositing.html" class="nav-link">Layers y compositing</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="performance/web-metrics.html" class="nav-link">Métricas web y LCP</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="performance/pitfalls-rendimiento.html" class="nav-link">Errores comunes de rendimiento</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="performance/optimizacion-estilos-scripts.html" class="nav-link">Optimización de estilos y scripts</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="css/css-costoso.html" class="nav-link">Cambios CSS más costosos</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="performance/ejercicio-medir-lcp.html" class="nav-link">Ejercicio: medir LCP</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="performance/ejercicio-dom-reflow.html" class="nav-link">Ejercicio: DOM y reflow</a></li>
-              <li class="nav-item"><span class="completion-indicator"></span><a href="css/ejercicio-layers.html" class="nav-link">Ejercicio: layers y animaciones</a></li>
             </ul>
           </details>
         </nav>
