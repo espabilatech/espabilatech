@@ -49,7 +49,6 @@ header {
 
 @media (max-width: 980px) {
   .mobile-menu-toggle { display: inline-flex; }
-  /* optional: hide theme toggle on very small screens to save space */
   .theme-toggle { display: none; }
 }
 

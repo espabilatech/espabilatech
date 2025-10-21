@@ -39,55 +39,53 @@ class MainHeader extends HTMLElement {
     `;
 
   const themeToggle = this.shadowRoot.querySelector('.theme-toggle');
-    const themeIcon = themeToggle.querySelector('svg');
+  const themeIcon = themeToggle.querySelector('svg');
 
   function setThemeIcon() {
-      if (document.body.classList.contains('dark-theme')) {
-        themeIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`;
-      } else {
-        themeIcon.innerHTML = `
-          <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M12 2V4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M12 20V22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M4.93 4.93L6.34 6.34" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M17.66 17.66L19.07 19.07" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M2 12H4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M20 12H22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M6.34 17.66L4.93 19.07" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M19.07 4.93L17.66 6.34" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        `;
-      }
+    if (document.body.classList.contains('dark-theme')) {
+      themeIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`;
+    } else {
+      themeIcon.innerHTML = `
+        <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 2V4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M12 20V22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M4.93 4.93L6.34 6.34" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M17.66 17.66L19.07 19.07" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2 12H4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M20 12H22" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6.34 17.66L4.93 19.07" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M19.07 4.93L17.66 6.34" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      `;
     }
-    setThemeIcon();
+  }
+  setThemeIcon();
 
-    themeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-theme');
-      setThemeIcon();
-    });
-    const mobileToggle = this.shadowRoot.querySelector('.mobile-menu-toggle');
-    mobileToggle.addEventListener('click', () => {
-      document.body.classList.toggle('sidebar-open');
-      
-      let globalBackdrop = document.querySelector('.global-sidebar-backdrop');
-      if (!globalBackdrop) {
-        globalBackdrop = document.createElement('div');
-        globalBackdrop.className = 'global-sidebar-backdrop';
-        document.body.appendChild(globalBackdrop);
-        globalBackdrop.addEventListener('click', () => document.body.classList.remove('sidebar-open'));
-      }
-      globalBackdrop.style.display = document.body.classList.contains('sidebar-open') ? 'block' : 'none';
-      
-      const sidebar = document.querySelector('side-bar');
-      if (document.body.classList.contains('sidebar-open') && sidebar) {
-        const firstLink = sidebar.querySelector('.nav-link');
-        if (firstLink) firstLink.focus();
-      }
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && document.body.classList.contains('sidebar-open')) {
-        document.body.classList.remove('sidebar-open');
-      }
-    });
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    setThemeIcon();
+  });
+  const mobileToggle = this.shadowRoot.querySelector('.mobile-menu-toggle');
+  mobileToggle.addEventListener('click', () => {
+    document.body.classList.toggle('sidebar-open');
+    let globalBackdrop = document.querySelector('.global-sidebar-backdrop');
+    if (!globalBackdrop) {
+      globalBackdrop = document.createElement('div');
+      globalBackdrop.className = 'global-sidebar-backdrop';
+      document.body.appendChild(globalBackdrop);
+      globalBackdrop.addEventListener('click', () => document.body.classList.remove('sidebar-open'));
+    }
+    globalBackdrop.style.display = document.body.classList.contains('sidebar-open') ? 'block' : 'none';
+    const sidebar = document.querySelector('side-bar');
+    if (document.body.classList.contains('sidebar-open') && sidebar) {
+      const firstLink = sidebar.querySelector('.nav-link');
+      if (firstLink) firstLink.focus();
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.body.classList.contains('sidebar-open')) {
+      document.body.classList.remove('sidebar-open');
+    }
+  });
   }
 }
 customElements.define('main-header', MainHeader);

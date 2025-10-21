@@ -1,48 +1,34 @@
 :root {
-      /* Colores de espabilaTech */
-      --color-primary: #ff4425; /* Naranja/rojo del fondo */
-      --color-secondary: #003b7a; /* Azul oscuro del borde */
-      --color-accent: #00b2ff; /* Azul claro del rayo */
-      --color-happy: #ffcc00; /* Amarillo de la carita */
-      --color-light: #fff9f0; /* Blanco crema del texto */
-      --color-dark: #1a1a1a; /* Negro para texto */
-      --color-gray: #f5f5f5; /* Gris claro para fondos */
-      --color-gray-dark: #666666; /* Gris oscuro para textos secundarios */
-      --color-code-bg: #f8f8f8; /* Fondo para bloques de código */
+      --color-primary: #ff4425;
+      --color-secondary: #003b7a;
+      --color-accent: #00b2ff;
+      --color-happy: #ffcc00;
+      --color-light: #fff9f0;
+      --color-dark: #1a1a1a;
+      --color-gray: #f5f5f5;
+      --color-gray-dark: #666666;
+      --color-code-bg: #f8f8f8;
       --color-coffee: #6f4e37;
-      
-      /* Fuentes */
       --font-primary: 'Poppins', sans-serif;
       --font-code: 'Consolas', 'Monaco', monospace;
-      
-      /* Espaciado */
       --spacing-xs: 0.25rem;
       --spacing-sm: 0.5rem;
       --spacing-md: 1rem;
       --spacing-lg: 2rem;
       --spacing-xl: 4rem;
-      
-      /* Bordes */
       --border-radius-sm: 4px;
       --border-radius-md: 8px;
       --border-radius-lg: 16px;
-      
-      /* Sombras */
       --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
       --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
       --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
-      
-      /* Transiciones */
       --transition-fast: 0.2s ease;
       --transition-normal: 0.3s ease;
-      
-      /* GitBook específico */
       --sidebar-width: 300px;
       --toc-width: 240px;
       --header-height: 60px;
     }
 
-    /* Reset y estilos base */
     * {
       margin: 0;
       padding: 0;
@@ -97,15 +83,11 @@
       padding-left: 1.5rem;
     }
 
-
-    /* Layout principal */
     .main-container {
       display: flex;
       flex: 1;
     }
 
-
-    /* Contenido principal */
     .content-wrapper {
       flex: 1;
       display: flex;
@@ -119,7 +101,6 @@
       font-size: 19px;
     }
 
-    /* Tabla de contenidos */
     .table-of-contents {
       width: var(--toc-width);
       padding: var(--spacing-lg);
@@ -172,7 +153,6 @@
       font-size: 0.85rem;
     }
 
-    /* Estilos de contenido */
     .page-title {
       font-size: 2.5rem;
       font-weight: 800;
@@ -185,12 +165,11 @@
     section {
       margin-bottom: var(--spacing-lg);
     }
-    
+
     .content-text {
       margin-bottom: var(--spacing-md);
     }
 
-    /* Tarjetas */
     .card {
       background-color: white;
       border-radius: var(--border-radius-md);
@@ -213,7 +192,6 @@
       margin-bottom: var(--spacing-sm);
     }
 
-    /* Alertas */
     .alert {
       padding: var(--spacing-md);
       border-radius: var(--border-radius-md);
@@ -257,11 +235,10 @@
       border-left: 4px solid #4CAF50;
     }
 
-    /* Videos de YouTube */
     .video-container {
       position: relative;
       width: 100%;
-      padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+      padding-bottom: 56.25%;
       margin: var(--spacing-lg) 0;
     }
 
@@ -275,7 +252,6 @@
       border: none;
     }
 
-    /* Ejercicios */
     .exercise-card {
       background-color: white;
       border-radius: var(--border-radius-md);
@@ -347,7 +323,6 @@
       display: block;
     }
 
-    /* Paginación */
     .pagination {
       display: flex;
       justify-content: space-between;
@@ -355,7 +330,6 @@
       padding-top: var(--spacing-lg);
       border-top: 1px solid #e0e0e0;
     }
-
 
     .pagination-link {
       display: inline-flex;
@@ -395,7 +369,6 @@
     .pagination-text {
       font-weight: 500;
     }
-
 
     /* Responsive */
     @media (max-width: 1200px) {
@@ -487,6 +460,7 @@
       --color-gray: #333333;
       --color-gray-dark: #aaaaaa;
       --color-code-bg: #2d2d2d;
+      --color-primary:rgba(0, 178, 255, 0.1);
       background-color: var(--color-light);
       color: var(--color-dark);
     }
