@@ -85,7 +85,7 @@ if ('adoptedStyleSheets' in Document.prototype) {
 
 class CodeBlock extends HTMLElement {
   static get observedAttributes() {
-    return ['title', 'language', 'code', 'show-result', 'no-result'];
+    return ['title', 'language', 'show-result', 'no-result'];
   }
 
   constructor() {
@@ -104,18 +104,36 @@ class CodeBlock extends HTMLElement {
   render() {
     const title = this.getAttribute('title') || '';
     const language = (this.getAttribute('language') || '').toLowerCase();
-    // Prefer projected content as source; fallback to code="..."
-    let projected = (this.innerHTML || '').trim();
-    const code = projected.length ? projected : (this.getAttribute('code') || '');
-    // Determine if result tab should be shown
+
+    if (this.hasAttribute('code')) console.warn('The `code` attribute on <code-block> is deprecated and will be ignored. Use a <template> child to project code.');
+    let raw = '';
+    const tpl = this.querySelector('template');
+    if (tpl) raw = tpl.innerHTML; else raw = this.innerHTML || '';
+
+    const dedent = (s) => {
+      if (!s) return '';
+      s = String(s).replace(/\r\n?/g, '\n');
+      s = s.replace(/^\s*\n/, '').replace(/\n\s*$/, '');
+      const lines = s.split('\n');
+      let minIndent = Infinity;
+      for (const line of lines) {
+        if (!line.trim()) continue;
+        const m = line.match(/^[ \t]*/)[0].length;
+        if (m < minIndent) minIndent = m;
+      }
+      if (minIndent === Infinity) minIndent = 0;
+      return lines.map(l => l.slice(minIndent)).join('\n');
+    };
+
+    const code = dedent(raw);
+
     let showResult = true;
-    if (this.hasAttribute('no-result')) {
-      showResult = false;
-    } else if (this.hasAttribute('show-result')) {
+    if (this.hasAttribute('no-result')) showResult = false; else if (this.hasAttribute('show-result')) {
       const val = this.getAttribute('show-result');
       if (val === 'false' || val === '0' || val === 'no') showResult = false;
     }
-    // Usar adoptedStyleSheets si está disponible
+
+    // Render UI (adoptedStyleSheets if available, otherwise inline style)
     if (codeBlockSheet && 'adoptedStyleSheets' in this.shadowRoot) {
       this.shadowRoot.adoptedStyleSheets = [codeBlockSheet];
       this.shadowRoot.innerHTML = `
@@ -143,7 +161,6 @@ class CodeBlock extends HTMLElement {
         </div>
       `;
     } else {
-      // Fallback: style inline (para navegadores antiguos)
       this.shadowRoot.innerHTML = `
         <style>${codeBlockCSS}</style>
         <div class="code-block-container">
@@ -170,8 +187,7 @@ class CodeBlock extends HTMLElement {
         </div>
       `;
     }
-    // Set code as textContent to avoid HTML interpretation
-    this.shadowRoot.querySelector('code').textContent = code;
+  this.shadowRoot.querySelector('code').textContent = code;
     // Render result if present
     let resultContainer = null;
     if (showResult) {
@@ -179,16 +195,13 @@ class CodeBlock extends HTMLElement {
       if (language === 'html') {
         resultContainer.innerHTML = code.replace(/\n/g, '\n');
       } else if (language === 'html+css') {
-        // Espera que el code tiene una sección <style> o /* CSS */ y HTML
         let html = code;
         let css = '';
-        // Extraer CSS si está entre <style>...</style>
         const styleMatch = code.match(/<style[^>]*>([\s\S]*?)<\/style>/i);
         if (styleMatch) {
           css = styleMatch[1];
           html = code.replace(styleMatch[0], '');
         } else {
-          // O buscar /* CSS */ ...
           const cssCommentMatch = code.match(/\/\*\s*CSS\s*\*\/(.*)/is);
           if (cssCommentMatch) {
             css = cssCommentMatch[1];

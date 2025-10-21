@@ -38,12 +38,10 @@ class MainHeader extends HTMLElement {
       </header>
     `;
 
-    // Theme toggle logic (global)
-    const themeToggle = this.shadowRoot.querySelector('.theme-toggle');
+  const themeToggle = this.shadowRoot.querySelector('.theme-toggle');
     const themeIcon = themeToggle.querySelector('svg');
 
-    // Set initial icon based on current theme
-    function setThemeIcon() {
+  function setThemeIcon() {
       if (document.body.classList.contains('dark-theme')) {
         themeIcon.innerHTML = `<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`;
       } else {
@@ -66,12 +64,10 @@ class MainHeader extends HTMLElement {
       document.body.classList.toggle('dark-theme');
       setThemeIcon();
     });
-
-    // Mobile sidebar toggle
     const mobileToggle = this.shadowRoot.querySelector('.mobile-menu-toggle');
     mobileToggle.addEventListener('click', () => {
       document.body.classList.toggle('sidebar-open');
-      // create global backdrop if missing
+      
       let globalBackdrop = document.querySelector('.global-sidebar-backdrop');
       if (!globalBackdrop) {
         globalBackdrop = document.createElement('div');
@@ -79,17 +75,14 @@ class MainHeader extends HTMLElement {
         document.body.appendChild(globalBackdrop);
         globalBackdrop.addEventListener('click', () => document.body.classList.remove('sidebar-open'));
       }
-      // toggle backdrop visibility via body class
       globalBackdrop.style.display = document.body.classList.contains('sidebar-open') ? 'block' : 'none';
-      // move focus to sidebar for accessibility
+      
       const sidebar = document.querySelector('side-bar');
       if (document.body.classList.contains('sidebar-open') && sidebar) {
         const firstLink = sidebar.querySelector('.nav-link');
         if (firstLink) firstLink.focus();
       }
     });
-
-    // Close sidebar with Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && document.body.classList.contains('sidebar-open')) {
         document.body.classList.remove('sidebar-open');

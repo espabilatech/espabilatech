@@ -46,7 +46,7 @@ class MainFooter extends HTMLElement {
               </svg>
             </a>
           </div>
-          <p class="footer-copyright">© 2025 espabilaTech. Todos los derechos reservados.</p>
+          <p class="footer-copyright"> 2025 espabilaTech. Todos los derechos reservados.</p>
         </div>
       </footer>
     `;

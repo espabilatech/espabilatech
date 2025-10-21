@@ -35,12 +35,16 @@
         <section >
           <h2 class="section-title">¿Qué es la especificidad?</h2>
           <p>Si dos reglas CSS apuntan al mismo elemento, la más "específica" gana. Por ejemplo, observa el siguiente código:</p>
-          <code-block title="Ejemplo de especificidad" language="html+css" code="<!-- HTML -->
-&lt;p class='importante'&gt;Hola&lt;/p&gt;
+          <code-block title="Ejemplo de especificidad" language="html+css">
+            <template>
+<!-- HTML -->
+<p class='importante'>Hola</p>
 <style>
 p { color: blue; }
 .importante { color: red; }
-</style>"></code-block>
+</style>
+            </template>
+          </code-block>
           <p>El texto será <b>rojo</b> porque la clase es más específica que la etiqueta.</p>
         </section>
         <section >
@@ -53,25 +57,33 @@ p { color: blue; }
         <section >
           <h2 class="section-title">Ejemplo práctico</h2>
           <p>En este ejemplo, el mismo elemento tiene etiqueta, clase e id. ¿Qué color gana?</p>
-          <code-block title="Ejemplo práctico" language="html+css" code="<!-- HTML -->
-&lt;p id='aviso' class='importante'&gt;¡Atención!&lt;/p&gt;
+          <code-block title="Ejemplo práctico" language="html+css">
+            <template>
+<!-- HTML -->
+<p id='aviso' class='importante'>¡Atención!</p>
 <style>
 p { color: blue; }
 .importante { color: red; }
 #aviso { color: green; }
-</style>"></code-block>
+</style>
+            </template>
+          </code-block>
           <p>El texto será <b>verde</b> porque el id es lo más específico.</p>
         </section>
         <section >
           <h2 class="section-title">¡Ponlo en práctica!</h2>
           <p>Prueba a copiar este HTML y CSS en tu editor y cambia los colores para ver cómo funciona la especificidad:</p>
-          <code-block title="Prueba en práctica" language="html+css" code="<!-- HTML -->
-&lt;p id='mensaje' class='importante'&gt;¡Hola CSS!&lt;/p&gt;
+          <code-block title="Prueba en práctica" language="html+css">
+            <template>
+<!-- HTML -->
+<p id='mensaje' class='importante'>¡Hola CSS!</p>
 <style>
 p { color: orange; }
 .importante { color: purple; }
 #mensaje { color: teal; }
-</style>"></code-block>
+</style>
+            </template>
+          </code-block>
           <p>¿De qué color se verá el texto? <b>Teal</b> (porque el id es lo más específico).</p>
         </section>
         <section >

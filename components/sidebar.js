@@ -54,7 +54,7 @@ class SideBar extends HTMLElement {
       </aside>
     `;
     // Normalizar rutas de enlaces según el nivel actual (raíz o subcarpeta)
-    this.shadowRoot.querySelectorAll('.nav-link').forEach(a => {
+      this.shadowRoot.querySelectorAll('.nav-link').forEach(a => {
       const href = a.getAttribute('href') || '';
       if (!/^(?:https?:|mailto:|#|\/|\.\.\/)/.test(href)) {
         a.setAttribute('href', prefix + href);
@@ -69,7 +69,7 @@ class SideBar extends HTMLElement {
       if (linkFile === current) {
         link.classList.add('active');
         // Buscar el details padre y abrirlo
-        const details = link.closest('details');
+          const details = link.closest('details');
         if (details) {
           activeDetails = details;
         }
@@ -92,7 +92,7 @@ class SideBar extends HTMLElement {
     const completed = getCompleted();
     this.shadowRoot.querySelectorAll('.nav-item').forEach(item => {
       const link = item.querySelector('.nav-link');
-      const indicator = item.querySelector('.completion-indicator');
+          document.body.classList.remove('sidebar-open');
       if (!link || !indicator) return;
       // Set state via class
       indicator.classList.toggle('completed', !!completed[link.href]);
