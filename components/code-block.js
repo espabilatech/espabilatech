@@ -59,6 +59,11 @@ const codeBlockCSS = `
     margin: 0;
     padding: 1em;
     overflow-x: auto;
+    /* Allow long lines to wrap instead of overflowing */
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
+    word-break: break-word;
     background: #222;
     border-radius: 0 0 8px 8px;
   }
@@ -75,6 +80,31 @@ const codeBlockCSS = `
     border: none;
     border-radius: 0 0 8px 8px;
     background: #fff;
+  }
+  /* Responsive: on small screens hide the tabs and stack code then result */
+  @media (max-width: 768px) {
+    .tabs {
+      display: none;
+    }
+    /* Ensure both code and result are visible and stacked */
+    .tab-content {
+      display: block;
+      border-radius: 0 0 8px 8px;
+      padding: 0;
+    }
+    /* Hide copy button on small screens */
+    .copy-btn {
+      display: none;
+    }
+    .tab-content.tab-content-code pre {
+      border-radius: 8px 8px 0 0;
+    }
+    .tab-content.tab-content-result {
+      margin-top: 0.5em;
+    }
+    .result-container {
+      border-radius: 0 0 8px 8px;
+    }
   }
 `;
 let codeBlockSheet = null;

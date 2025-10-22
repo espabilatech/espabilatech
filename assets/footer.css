@@ -29,6 +29,8 @@ footer {
   display: flex;
   justify-content: center;
   gap: var(--spacing-lg);
+  /* Allow links to wrap onto multiple lines on small screens */
+  flex-wrap: wrap;
   margin-bottom: var(--spacing-md);
 }
 
@@ -46,6 +48,22 @@ footer {
   justify-content: center;
   gap: var(--spacing-md);
   margin-bottom: var(--spacing-md);
+}
+
+/* Responsive tweaks for smaller screens */
+@media (max-width: 600px) {
+  .footer-links {
+    gap: 0.5rem;
+  }
+  .footer-logo {
+    gap: 0.25rem;
+  }
+  .footer-social {
+    gap: 0.5rem;
+  }
+  .footer-content {
+    padding: 0 var(--spacing-sm);
+  }
 }
 
 .social-link {
