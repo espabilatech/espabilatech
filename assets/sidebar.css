@@ -1,7 +1,7 @@
 .sidebar {
   width: var(--sidebar-width);
-  background-color: var(--color-light);
-  border-right: 1px solid #e0e0e0;
+  background-color: var(--sidebar-bg);
+  border-right: 1px solid var(--border);
   height: 100%;
   overflow-y: auto;
   position: sticky;
@@ -9,9 +9,9 @@
   transition: transform var(--transition-normal);
 }
 
-.sidebar-header {
+  .sidebar-header {
   padding-bottom: var(--spacing-md);
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--border);
   margin-bottom: var(--spacing-md);
 }
 
@@ -25,9 +25,9 @@
   padding: 0.9rem 0 0.2rem;
 }
 
-.nav-group-title {
+  .nav-group-title {
   font-weight: 700;
-  color: var(--color-gray-dark);
+  color: var(--muted);
   text-transform: uppercase;
   font-size: 0.8rem;
   letter-spacing: 0.05em;
@@ -44,13 +44,13 @@
   font-weight: 800;
 }
 
-.nav-group-title .chevron {
+  .nav-group-title .chevron {
   display: inline-block;
   margin-left: 0.5em;
   transition: transform 0.2s;
   width: .7em;
   height: .7em;
-  border: solid #888;
+  border: solid var(--muted);
   border-width: 0 2px 2px 0;
   padding: 2px;
   transform: rotate(-45deg);
@@ -72,21 +72,21 @@
   align-items: center;
 }
 
-.nav-link {
+  .nav-link {
   padding: var(--spacing-sm);
   border-radius: var(--border-radius-sm);
-  color: var(--color-dark);
+  color: var(--foreground); /* restored to original: links match foreground in sidebar */
   transition: all var(--transition-fast);
 }
 
-.nav-link:hover, .nav-link:focus {
-  background-color: var(--color-gray);
+  .nav-link:hover, .nav-link:focus {
+  background-color: var(--card-bg);
   color: var(--color-secondary);
 }
 
-.nav-link.active {
-  background-color: var(--color-primary);
-  color: white;
+  .nav-link.active {
+  background-color: var(--nav-active-bg);
+  color: var(--nav-active-color);
 }
 
 .nav-link.sub-item {
@@ -94,36 +94,36 @@
   font-size: 0.9rem;
 }
 
-.completion-indicator {
+  .completion-indicator {
   display: inline-block;
   width: 14px;
   height: 14px;
   margin-right: 8px;
   border-radius: 50%;
-  border: 2px solid #bbb;
+  border: 2px solid var(--muted);
   vertical-align: middle;
   cursor: pointer;
-  background: #fff;
+  background: var(--background);
   transition: background 0.2s, border-color 0.2s;
   position: relative;
   top: 2px;
 }
 
-.completion-indicator.completed {
-  background: #4CAF50;
-  border-color: #388e3c;
+  .completion-indicator.completed {
+  background: var(--success);
+  border-color: var(--success-border);
 }
 
-body.dark-theme .sidebar,
-body.dark-theme .table-of-contents {
-  background-color: #222222;
-  border-color: #444444;
-}
+  html[data-theme="dark"] .sidebar,
+  html[data-theme="dark"] .table-of-contents {
+    background-color: var(--card-bg);
+    border-color: var(--border);
+  }
 
-body.dark-theme .nav-link:hover,
-body.dark-theme .nav-link:focus {
-  background-color: #333333;
-}
+      html[data-theme="dark"] .nav-link:hover,
+      html[data-theme="dark"] .nav-link:focus {
+        background-color: var(--card-bg);
+      }
 
 @media (max-width: 980px) {
   .sidebar {
@@ -134,17 +134,17 @@ body.dark-theme .nav-link:focus {
     width: min(320px, 85%);
     transform: translateX(-110%);
     z-index: 1200;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.3);
-    background-color: var(--color-light);
+    box-shadow: var(--shadow-lg);
+    background-color: var(--sidebar-bg);
   }
   .sidebar.open {
     transform: translateX(0);
   }
-  .global-sidebar-backdrop {
+    .global-sidebar-backdrop {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.4);
+    background: var(--overlay-bg);
     z-index: 1100;
   }
   body.sidebar-open .global-sidebar-backdrop {

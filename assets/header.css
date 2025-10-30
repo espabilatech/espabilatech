@@ -1,6 +1,6 @@
 header {
-  background-color: var(--color-primary);
-  color: white;
+  background-color: var(--header-bg);
+  color: var(--on-primary);
   padding: 0 var(--spacing-md);
   height: var(--header-height);
   display: flex;
@@ -21,7 +21,7 @@ header {
 .logo-text {
   font-size: 1.25rem;
   font-weight: 700;
-  color: white;
+  color: var(--on-primary);
 }
 
 .header-actions {
@@ -33,7 +33,7 @@ header {
 .theme-toggle {
   background: none;
   border: none;
-  color: white;
+  color: var(--on-primary);
   cursor: pointer;
   font-size: 1.2rem;
 }
@@ -42,7 +42,7 @@ header {
   display: none;
   background: none;
   border: none;
-  color: white;
+  color: var(--on-primary);
   cursor: pointer;
   font-size: 1.5rem;
 }
@@ -52,6 +52,6 @@ header {
   .theme-toggle { display: none; }
 }
 
-body.dark-theme header {
-  background-color: #111111;
+html[data-theme="dark"] header {
+  background-color: var(--header-bg);
 }

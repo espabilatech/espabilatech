@@ -1,6 +1,6 @@
 footer {
-  background-color: var(--color-secondary);
-  color: white;
+  background-color: var(--footer-bg);
+  color: var(--on-secondary);
   padding: var(--spacing-lg) 0;
   text-align: center;
 }
@@ -22,7 +22,7 @@ footer {
 .footer-logo-text {
   font-size: 1.25rem;
   font-weight: 700;
-  color: white;
+  color: var(--on-secondary);
 }
 
 .footer-links {
@@ -35,7 +35,7 @@ footer {
 }
 
 .footer-link {
-  color: white;
+  color: var(--on-secondary);
   transition: color var(--transition-fast);
 }
 
@@ -67,7 +67,7 @@ footer {
 }
 
 .social-link {
-  color: white;
+  color: var(--on-secondary);
   font-size: 1.2rem;
   transition: color var(--transition-fast);
 }
@@ -81,6 +81,6 @@ footer {
   opacity: 0.8;
 }
 
-body.dark-theme footer {
-  background-color: #111111;
+html[data-theme="dark"] footer {
+  background-color: var(--footer-bg);
 }

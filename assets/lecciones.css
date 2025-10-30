@@ -1,14 +1,58 @@
 :root {
-      --color-primary: #ff4425;
-      --color-secondary: #003b7a;
-      --color-accent: #00b2ff;
-      --color-happy: #ffcc00;
-      --color-light: #fff9f0;
-      --color-dark: #1a1a1a;
-      --color-gray: #f5f5f5;
-      --color-gray-dark: #666666;
-      --color-code-bg: #f8f8f8;
-      --color-coffee: #6f4e37;
+      /* Enable native light/dark handling where supported */
+      color-scheme: light dark;
+
+      /* Semantic tokens using light-dark() so browsers that support it switch natively. */
+      --background: light-dark(#ffffff, #1a1a1a);
+      --foreground: light-dark(#1a1a1a, #f5f5f5);
+  --card-bg: light-dark(#ffffff, #222222);
+  --border: light-dark(#e0e0e0, #444444);
+  /* Restore original light-mode semantic backgrounds while keeping dark fallbacks */
+  --sidebar-bg: light-dark(#fff9f0, #222222); /* previously --color-light */
+  --toc-bg: light-dark(#ffffff, #222222);
+  --header-bg: light-dark(#ff4425, #111111); /* header was originally primary (red) */
+  --footer-bg: light-dark(#003b7a, #111111); /* footer was originally secondary (blue) */
+      --code-bg: light-dark(#f8f8f8, #2d2d2d);
+    --muted: light-dark(#666666, #aaaaaa);
+    /* Links: stronger blue in light mode, soft blue in dark */
+    --link-color: light-dark(#0066cc, #8ab4ff);
+    --link-hover: light-dark(#004a99, #7bd0ff);
+  /* Link and navigation active tokens with dark-mode adjustments */
+  /* Nav active in light uses a pale tint so it stands out from the cream sidebar; dark-mode uses a muted slate. */
+  /* In light mode the selected item should be vivid red as requested; dark mode keeps the muted slate */
+  --nav-active-bg: light-dark(#ff4425, #2f3a40);
+  --nav-active-color: light-dark(#ffffff, #e6eef6);
+
+      /* Existing tokens (kept for compatibility) */
+  --color-primary: light-dark(#ff4425, #ff4425);
+  --color-primary-hover: light-dark(#e03a1e, #e03a1e);
+  --color-secondary: light-dark(#003b7a, #003b7a);
+  --color-accent: light-dark(#00b2ff, #00b2ff);
+  --color-happy: light-dark(#ffcc00, #ffcc00);
+  --color-light: light-dark(#fff9f0, #111111);
+  --color-dark: light-dark(#1a1a1a, #f5f5f5);
+  --color-gray: light-dark(#f5f5f5, #333333);
+  --color-gray-dark: light-dark(#666666, #aaaaaa);
+  --color-code-bg: light-dark(#f8f8f8, #2d2d2d);
+  --color-coffee: light-dark(#6f4e37, #6f4e37);
+  /* foreground-on colors for text placed on colored backgrounds */
+  /* on-* tokens define the color for text/icons placed on top of the color token */
+  /* Use light colors for dark-mode to ensure contrast against dark backgrounds */
+  --on-primary: light-dark(#ffffff, #f5f5f5); /* header primary: white on both, slightly off-white in dark */
+  --on-secondary: light-dark(#ffffff, #f5f5f5); /* footer/secondary text should be light in dark mode */
+  --on-accent: light-dark(#ffffff, #f5f5f5); /* accent uses light text on dark backgrounds */
+  --success: light-dark(#4CAF50, #4CAF50);
+  --success-border: light-dark(#388e3c, #388e3c);
+  --overlay-bg: light-dark(rgba(0,0,0,0.5), rgba(0,0,0,0.6));
+  --text-shadow-color: light-dark(rgba(0,0,0,0.08), rgba(0,0,0,0.6));
+  --alert-info-bg: light-dark(rgba(0, 178, 255, 0.1), rgba(0, 178, 255, 0.08));
+  --alert-warning-bg: light-dark(rgba(255, 204, 0, 0.1), rgba(255, 204, 0, 0.06));
+  --alert-danger-bg: light-dark(rgba(255, 68, 37, 0.1), rgba(255, 68, 37, 0.06));
+  --alert-success-bg: light-dark(rgba(76, 175, 80, 0.1), rgba(76, 175, 80, 0.06));
+  /* shadow color tokens */
+  --shadow-color-sm: light-dark(rgba(0, 0, 0, 0.06), rgba(0,0,0,0.6));
+  --shadow-color-md: light-dark(rgba(0, 0, 0, 0.08), rgba(0,0,0,0.6));
+  --shadow-color-lg: light-dark(rgba(0, 0, 0, 0.12), rgba(0,0,0,0.6));
       --font-primary: 'Poppins', sans-serif;
       --font-code: 'Consolas', 'Monaco', monospace;
       --spacing-xs: 0.25rem;
@@ -19,9 +63,9 @@
       --border-radius-sm: 4px;
       --border-radius-md: 8px;
       --border-radius-lg: 16px;
-      --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-      --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
-      --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+  --shadow-sm: 0 2px 4px var(--shadow-color-sm);
+  --shadow-md: 0 4px 8px var(--shadow-color-md);
+  --shadow-lg: 0 8px 16px var(--shadow-color-lg);
       --transition-fast: 0.2s ease;
       --transition-normal: 0.3s ease;
       --sidebar-width: 300px;
@@ -43,7 +87,8 @@
     body {
       font-family: var(--font-primary);
       line-height: 1.6;
-      color: var(--color-dark);
+      color: var(--foreground);
+      background-color: var(--background);
       overflow-x: hidden;
       display: flex;
       flex-direction: column;
@@ -65,18 +110,18 @@
       text-align: center;
       margin: 2em auto;
       padding: 2em;
-      border: 1px solid #b2b2b2;
+      border: 1px solid var(--border);
       text-align: center; 
     }
 
     a {
-      color: var(--color-secondary);
+      color: var(--link-color);
       text-decoration: none;
       transition: color var(--transition-fast);
     }
 
     a:hover, a:focus {
-      color: var(--color-accent);
+      color: var(--link-hover);
     }
 
     ul, ol {
@@ -104,7 +149,7 @@
     .table-of-contents {
       width: var(--toc-width);
       padding: var(--spacing-lg);
-      border-left: 1px solid #e0e0e0;
+      border-left: 1px solid var(--border);
       height: calc(100vh - var(--header-height));
       overflow-y: auto;
       position: sticky;
@@ -159,7 +204,7 @@
       color: var(--color-secondary);
       margin-bottom: var(--spacing-lg);
       padding-bottom: var(--spacing-md);
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 1px solid var(--border);
     }
 
     section {
@@ -171,12 +216,12 @@
     }
 
     .card {
-      background-color: white;
+      background-color: var(--card-bg);
       border-radius: var(--border-radius-md);
       box-shadow: var(--shadow-sm);
       padding: var(--spacing-lg);
       margin-bottom: var(--spacing-lg);
-      border: 1px solid #e0e0e0;
+      border: 1px solid var(--border);
       transition: transform var(--transition-fast), box-shadow var(--transition-fast);
     }
 
@@ -216,23 +261,23 @@
     }
 
     .alert-info {
-      background-color: rgba(0, 178, 255, 0.1);
+      background-color: var(--alert-info-bg);
       border-left: 4px solid var(--color-accent);
     }
 
     .alert-warning {
-      background-color: rgba(255, 204, 0, 0.1);
+      background-color: var(--alert-warning-bg);
       border-left: 4px solid var(--color-happy);
     }
 
     .alert-danger {
-      background-color: rgba(255, 68, 37, 0.1);
+      background-color: var(--alert-danger-bg);
       border-left: 4px solid var(--color-primary);
     }
 
     .alert-success {
-      background-color: rgba(76, 175, 80, 0.1);
-      border-left: 4px solid #4CAF50;
+      background-color: var(--alert-success-bg);
+      border-left: 4px solid var(--success);
     }
 
     .video-container {
@@ -253,17 +298,17 @@
     }
 
     .exercise-card {
-      background-color: white;
+      background-color: var(--card-bg);
       border-radius: var(--border-radius-md);
       box-shadow: var(--shadow-sm);
       margin-bottom: var(--spacing-lg);
       overflow: hidden;
-      border: 1px solid #e0e0e0;
+      border: 1px solid var(--border);
     }
 
     .exercise-header {
       background-color: var(--color-secondary);
-      color: white;
+      color: var(--on-secondary);
       padding: var(--spacing-md);
       font-weight: 600;
     }
@@ -292,7 +337,7 @@
     }
 
     .exercise-hint {
-      background-color: rgba(255, 204, 0, 0.1);
+      background-color: var(--alert-warning-bg);
       padding: var(--spacing-md);
       border-radius: var(--border-radius-md);
       margin-top: var(--spacing-md);
@@ -301,7 +346,7 @@
 
     .exercise-solution-toggle {
       background-color: var(--color-primary);
-      color: white;
+      color: var(--on-primary);
       border: none;
       padding: var(--spacing-sm) var(--spacing-md);
       border-radius: var(--border-radius-md);
@@ -311,7 +356,7 @@
     }
 
     .exercise-solution-toggle:hover, .exercise-solution-toggle:focus {
-      background-color: #e03a1e;
+      background-color: var(--color-primary-hover);
     }
 
     .exercise-solution {
@@ -328,7 +373,7 @@
       justify-content: space-between;
       margin-top: var(--spacing-xl);
       padding-top: var(--spacing-lg);
-      border-top: 1px solid #e0e0e0;
+      border-top: 1px solid var(--border);
     }
 
     .pagination-link {
@@ -336,15 +381,15 @@
       align-items: center;
       gap: var(--spacing-sm);
       padding: 0.75em 2em;
-      border-radius: var(--border-radius-lg);
+    border-radius: var(--border-radius-lg);
   background: var(--color-primary);
-  color: #fff;
+  color: var(--on-primary);
       font-weight: 600;
       font-size: 1.1rem;
       border: none;
       box-shadow: var(--shadow-md);
       cursor: pointer;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+    text-shadow: 0 1px 2px var(--text-shadow-color);
       letter-spacing: 0.5px;
       transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
       outline: none;
@@ -352,7 +397,7 @@
 
     .pagination-link:hover, .pagination-link:focus {
   background: var(--color-secondary);
-  color: #fff;
+  color: var(--on-secondary);
       transform: translateY(-2px) scale(1.04);
       box-shadow: var(--shadow-lg);
       text-decoration: none;
@@ -394,7 +439,7 @@
         left: 0;
         transform: translateX(-100%);
         z-index: 99;
-        background-color: white;
+        background-color: var(--sidebar-bg);
       }
 
       .sidebar.active {
@@ -444,7 +489,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: rgba(0, 0, 0, 0.5);
+      background-color: var(--overlay-bg);
       z-index: 98;
       display: none;
     }
@@ -453,58 +498,72 @@
       display: block;
     }
 
-    /* Tema oscuro */
-    body.dark-theme {
-      --color-light: #1a1a1a;
-      --color-dark: #f5f5f5;
-      --color-gray: #333333;
-      --color-gray-dark: #aaaaaa;
-      --color-code-bg: #2d2d2d;
-      --color-primary:rgba(0, 178, 255, 0.1);
-      background-color: var(--color-light);
-      color: var(--color-dark);
-    }
+    /* Prefer native dark mode where possible. Provide a prefers-color-scheme fallback
+       and keep a minimal legacy `.dark-theme` class so existing JS toggles keep working. */
 
-    body.dark-theme header {
-      background-color: #111111;
-    }
-
-    body.dark-theme .sidebar,
-    body.dark-theme .table-of-contents {
-      background-color: #222222;
-      border-color: #444444;
-    }
-
-    body.dark-theme .card,
-    body.dark-theme .exercise-card {
-      background-color: #222222;
-      border-color: #444444;
-    }
-
-    body.dark-theme .nav-link:hover,
-    body.dark-theme .nav-link:focus {
-      background-color: #333333;
-    }
-
-    body.dark-theme .code-header {
-      background-color: #333333;
-    }
-
-    body.dark-theme .code-block {
-      border-color: #444444;
-    }
-
-    body.dark-theme .pagination {
-      border-color: #444444;
-    }
-
-    body.dark-theme footer {
-      background-color: #111111;
-    }
-
-
-    body.dark-theme {
-      & .page-title, h3, .section-title, .subsection-title {
-        color: white;
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #1a1a1a;
+        --foreground: #f5f5f5;
+  --card-bg: #222222;
+  --border: #444444;
+  --sidebar-bg: #222222;
+  --toc-bg: #222222;
+  --header-bg: #111111;
+  --footer-bg: #111111;
+  --code-bg: #2d2d2d;
+  --muted: #aaaaaa;
+  /* Ensure link/nav tokens are set for browsers that don't support light-dark() */
+  --link-color: #8ab4ff;
+  --link-hover: #7bd0ff;
+  --nav-active-bg: #8a3b2b;
+  --nav-active-color: #f5f5f5;
+  --on-primary: #f5f5f5;
+  --on-secondary: #f5f5f5;
+  --on-accent: #f5f5f5;
       }
+    }
+
+    /* Theme using data-theme on <html> for dark mode
+       Also set explicit custom-property overrides so toggling
+       data-theme works in UAs that don't understand light-dark(). */
+    html[data-theme="dark"] {
+      /* core colors */
+      --background: #1a1a1a;
+      --foreground: #f5f5f5;
+      --card-bg: #222222;
+      --border: #444444;
+      --sidebar-bg: #222222;
+      --header-bg: #111111;
+      --footer-bg: #111111;
+
+      /* link / nav overrides to ensure contrast when toggling */
+      --link-color: #8ab4ff;
+      --link-hover: #7bd0ff;
+  /* muted, low-saturation highlight for dark mode (avoid vivid reds) */
+  --nav-active-bg: #2f3a40; /* desaturated slate */
+  --nav-active-color: #e6eef6; /* soft, high-contrast text */
+
+      background-color: var(--background);
+      color: var(--foreground);
+    }
+
+    html[data-theme="dark"] header,
+    html[data-theme="dark"] footer {
+      background-color: var(--header-bg);
+    }
+
+    html[data-theme="dark"] .sidebar,
+    html[data-theme="dark"] .table-of-contents,
+    html[data-theme="dark"] .card,
+    html[data-theme="dark"] .exercise-card {
+      background-color: var(--card-bg);
+      border-color: var(--border);
+    }
+
+    html[data-theme="dark"] .page-title,
+    html[data-theme="dark"] h3,
+    html[data-theme="dark"] .section-title,
+    html[data-theme="dark"] .subsection-title {
+      color: var(--foreground);
     }
